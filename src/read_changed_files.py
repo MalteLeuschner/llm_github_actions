@@ -34,8 +34,8 @@ def main():
     for file in changed_files:
         print(file)
 
-    # Output changed files as comma-separated string
-    print(f"::set-output name=changed_files::{' '.join(changed_files)}")
+    # Output changed files as space string
+    print(f"echo 'changed_files={' '.join(changed_files)}' >> $GITHUB_ENV")
 
 if __name__ == "__main__":
     main()
