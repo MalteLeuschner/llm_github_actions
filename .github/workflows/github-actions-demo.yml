@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       changed_files: ${{ steps.python_script.outputs.changed_files }}
-      changes-detected:  ${{ steps.add_DS.outputs.changes-detected }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -32,22 +31,19 @@ jobs:
           python src/read_changed_files.py
 
       - name: Write files with dummyDS
-        id: add_DS
         run: |
-          if [ -n "${{ steps.python_script.outputs.changed_files }}" ]; then
+          if [ -n "$steps.python_script.outputs.changed_files" ]; then
             echo "Generating list of outputs..."
             for OUTPUT in "${{ steps.python_script.outputs.changed_files }}"; do
               python3.10 src/abstract_tree.py $OUTPUT
             done
-            echo "::set-output name=changes-detected::true"
           else 
             echo "No .py files changed..."
-            echo "::set-output name=changes-detected::false"
           fi
             
       - name: Commit updates .py
         run: |
-         if [ "${{ steps.add_DS.outputs.changes-detected }}" ]; then
+         if [ "$steps.python_script.outputs.changed_files" ]; then
             echo "Committing updated .py files..."
             git config --global user.name 'Your Name'
             git config --global user.email 'your-username@users.noreply.github.com'
