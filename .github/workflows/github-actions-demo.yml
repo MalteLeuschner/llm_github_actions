@@ -31,6 +31,7 @@ jobs:
           python src/read_changed_files.py
 
       - name: Write files with dummyDS
+        if: steps.python_script.outputs.changed_files != ''
         run: |
           if [ -n "${{ steps.python_script.outputs.changed_files }}" ]; then
             echo "Generating list of outputs..."
@@ -42,6 +43,7 @@ jobs:
           fi
             
       - name: Commit updates .py
+        if: steps.python_script.outputs.changed_files != ''
         run: |
          if [ "${{ steps.python_script.outputs.changed_files }}" ]; then
             echo "Committing updated .py files..."
