@@ -30,17 +30,17 @@ jobs:
         run: |
           python src/read_changed_files.py
 
-      - name: Write files in report
+      - name: Write files with dummyDS
         run: |
           echo "Generating list of outputs..."
           for OUTPUT in "${{steps.python_script.outputs.changed_files}}"; do
-            echo "Output: $OUTPUT"
+            python3.10 -m src/abstract_tree.py $OUTPUT
           done
       - name: Commit report
         run: |
           git config --global user.name 'Your Name'
           git config --global user.email 'your-username@users.noreply.github.com'
-          git add report.txt
-          git commit -am "Automated report"
+          git add .
+          git commit -am "Automated reports"
           git push
 
