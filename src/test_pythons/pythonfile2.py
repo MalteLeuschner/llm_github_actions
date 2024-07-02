@@ -1,5 +1,6 @@
 def main():
-	pass
+	return "test"
 
 if __name__ == "__main__":
-    main()
+    new = main()
+    print(new)
