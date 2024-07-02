@@ -33,26 +33,17 @@ jobs:
       - name: Write files with dummyDS
         if: steps.python_script.outputs.changed_files != ''
         run: |
-          if [ -n "${{ steps.python_script.outputs.changed_files }}" ]; then
-            echo "Generating list of outputs..."
-            for OUTPUT in "${{ steps.python_script.outputs.changed_files }}"; do
-              python3.10 src/abstract_tree.py $OUTPUT
-            done
-          else 
-            echo "No .py files changed..."
-          fi
+          echo "Generating list of outputs..."
+          for OUTPUT in "${{ steps.python_script.outputs.changed_files }}"; do
+            python3.10 src/abstract_tree.py $OUTPUT
+          done
             
       - name: Commit updates .py
         if: steps.python_script.outputs.changed_files != ''
         run: |
-         if [ "${{ steps.python_script.outputs.changed_files }}" ]; then
-            echo "Committing updated .py files..."
-            git config --global user.name 'Your Name'
-            git config --global user.email 'your-username@users.noreply.github.com'
-            git add .
-            git commit -am "LLM-documented files pushed"
-            git push
-         else
-           echo "No files committed"
-         fi
-
+          echo "Committing updated .py files..."
+          git config --global user.name 'Your Name'
+          git config --global user.email 'your-username@users.noreply.github.com'
+          git add .
+          git commit -am "LLM-documented files pushed"
+          git push
