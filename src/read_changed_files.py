@@ -5,7 +5,7 @@ import sys
 def get_changed_files(repo, commit_sha):
     commit = repo.get_commit(commit_sha)
     files = commit.files
-    changed_files = [file.filename for file in files]
+    changed_files = [file.filename for file in files if file.filename.endswith('.py')]
     return changed_files
 
 def main():
