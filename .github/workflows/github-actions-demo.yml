@@ -37,7 +37,9 @@ jobs:
             for OUTPUT in "${{steps.python_script.outputs.changed_files}}"; do
               python3.10 src/abstract_tree.py $OUTPUT
             done
-          else "No .py files changed..."
+          else 
+            echo "No .py files changed..."
+          fi
             
       - name: Commit updates .py
         run: |
