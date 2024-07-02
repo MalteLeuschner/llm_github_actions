@@ -32,7 +32,7 @@ jobs:
 
       - name: Write files in report
         run: |
-          ${{ steps.python_script.outputs.changed_files }} > report.txt
+          echo "${{ steps.python_script.outputs.changed_files }}" > report.txt
       - name: Commit report
         run: |
           git config --global user.name 'Your Name'
