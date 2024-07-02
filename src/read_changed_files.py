@@ -35,7 +35,7 @@ def main():
         print(file)
 
     # Output changed files as comma-separated string
-    print(f"::set-output name=changed_files::{','.join(changed_files)}")
+    print(f"::set-output name=changed_files::{' '.join(changed_files)}")
 
 if __name__ == "__main__":
     main()
