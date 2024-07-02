@@ -32,7 +32,7 @@ jobs:
 
       - name: Write files with dummyDS
         run: |
-          if [ -n "$steps.python_script.outputs.changed_files" ]; then
+          if [ -n "{{ $steps.python_script.outputs.changed_files }}" ]; then
             echo "Generating list of outputs..."
             for OUTPUT in "${{ steps.python_script.outputs.changed_files }}"; do
               python3.10 src/abstract_tree.py $OUTPUT
@@ -43,7 +43,7 @@ jobs:
             
       - name: Commit updates .py
         run: |
-         if [ "$steps.python_script.outputs.changed_files" ]; then
+         if [ "{{ $steps.python_script.outputs.changed_files }}" ]; then
             echo "Committing updated .py files..."
             git config --global user.name 'Your Name'
             git config --global user.email 'your-username@users.noreply.github.com'
