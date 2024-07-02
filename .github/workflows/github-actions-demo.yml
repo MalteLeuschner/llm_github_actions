@@ -32,7 +32,7 @@ jobs:
 
       - name: Write files with dummyDS
         run: |
-          if [[ -n "$changed_files}" ]]; then
+          if [[ -n "$changed_files" ]]; then
             echo "Generating list of outputs..."
             for OUTPUT in "${{steps.python_script.outputs.changed_files}}"; do
               python3.10 src/abstract_tree.py $OUTPUT
