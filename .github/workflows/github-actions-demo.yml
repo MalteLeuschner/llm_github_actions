@@ -39,5 +39,7 @@ jobs:
             git add $OUTPUT
           done
           echo "Committing updated .py files...!"
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
           git commit -am "LLM-documented files pushed"
           git push
