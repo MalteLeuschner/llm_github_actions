@@ -35,7 +35,7 @@ def main():
         print(file)
 
     # Output changed files as space string
-    print(f"echo 'changed_files={' '.join(changed_files)}' >> $GITHUB_ENV")
+    print(f"echo 'changed_files={' '.join(changed_files)}' >> $GITHUB_OUTPUT")
 
 if __name__ == "__main__":
     main()
