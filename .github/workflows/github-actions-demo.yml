@@ -40,6 +40,16 @@ jobs:
             black $OUTPUT
             git add $OUTPUT
           done
+      - name: Create Sphinx documentation
+        run: |
+          sudo apt-get update
+          sudo apt-get install expect
+          chmod +x ./create_sphinx_docs.exp
+          expect ./create_sphinx_docs.exp
+          make html
+          git add ./docs/
+      - name: Commit files
+        run: | 
           echo "Committing updated .py files...!"
           git config --global user.email "you@example.com"
           git config --global user.name "LLM-Docstring-Agent"
