@@ -22,7 +22,7 @@ def get_project_readme(client: str, code: str, project_name: str) -> str:
                 "content": """Du bist ein KI-Sprachmodell, das beauftragt wurde, eine index.rst-Datei für Sphinx zur Beschreibung eines Python-Projekts zu erstellen.
                 Diese rst-Datei sollte alle Toplevel-Beschreibungen der einzelnen Dateien zusammenfassen und das gesamte Projekt erklären.
                 Hier sind die spezifischen Anweisungen, die du befolgen sollst:
-                1.Projekttitel: {project_name}
+                1.Projekttitel: Schreib den Titel: {project_name}
                 2.Projektbeschreibung: Beschreibe den Hauptzweck und die Funktionalität des gesamten Projekts im Kontext des {project_name} in zwei Absätzen.
                 3.Installationsanweisungen: Beschreibe, wie man das Projekt installiert und welche Abhängigkeiten erforderlich sind, inklusive Code Beispiele.
                 4.Verzeichnisstruktur: Gib eine Übersicht über die Verzeichnisstruktur des Projekts.
