@@ -1,12 +1,31 @@
 from typing import Union
 from typing import Union
+from typing import Union
 
 
 def add(x: float, y: float) -> float:
+    """Adds two numbers.
+
+    Args:
+      x (float): The first number.
+      y (float): The second number.
+
+    Returns:
+      float: The sum of x and y."""
     return x + y
 
 
 def subtract(x: float, y: float) -> float:
+    """Subtracts two numbers.
+
+    This function takes two numbers as input and returns their difference.
+
+    Args:
+      x (float): The first number.
+      y (float): The second number.
+
+    Returns:
+      float: The difference of x and y."""
     return x - y
 
 
@@ -27,8 +46,7 @@ def multiply(x: float, y: float) -> float:
 def divide(x: float, y: float) -> Union[float, str]:
     """Divides two numbers.
 
-    Returns the result of the division if the second number is not zero,
-    otherwise returns an error message.
+    This function takes two numbers as input and returns their division if the second number is not zero, otherwise returns an error message.
 
     Args:
       x (float): The first number.
