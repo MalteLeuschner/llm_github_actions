@@ -36,6 +36,8 @@ jobs:
           echo "Generating list of outputs...!"
           for OUTPUT in "${{ steps.python_script.outputs.changed_files }}"; do
             python3.10 src/abstract_tree.py ${{ secrets.GROQ_API_KEY }} $OUTPUT
+            autopep8 --in-place --aggressive $OUTPUT
+            black $OUTPUT
             git add $OUTPUT
           done
           echo "Committing updated .py files...!"
