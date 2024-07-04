@@ -50,7 +50,7 @@ jobs:
         run: |
           cd docs
           make html
-          git add ../docs/
+          git add ../docs/*
       - name: Commit files
         run: | 
           echo "Committing updated .py files...!"
