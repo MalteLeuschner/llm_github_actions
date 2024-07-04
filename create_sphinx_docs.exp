@@ -1,0 +1,64 @@
+#!/usr/bin/expect
+
+# Define variables for the project name, author, etc.
+set project_name "Python-Project"
+set author_name "LLM-Bot"
+set version "0.1"
+set release "0.1.0"
+set output_dir "docs"
+
+# Create the output directory if it doesn't exist
+file mkdir $output_dir
+
+# Start sphinx-quickstart process
+spawn sphinx-quickstart $output_dir
+
+# Provide answers to the prompts
+expect "Separate source and build directories (y/n) [n]:"
+send "n\r"
+expect "Project name:"
+send "$project_name\r"
+expect "Author name(s):"
+send "$author_name\r"
+expect "Project release []:"
+send "$release\r"
+expect "Project version []:"
+send "$version\r"
+expect "Project language [en]:"
+send "en\r"
+expect "Source file suffix [.rst]:"
+send "\r"
+expect "Name of your master document (without suffix) [index]:"
+send "\r"
+expect "Do you want to use the epub builder (y/n) [n]:"
+send "n\r"
+expect "autodoc: automatically insert docstrings from modules (y/n) [n]:"
+send "n\r"
+expect "doctest: automatically test code snippets in doctest blocks (y/n) [n]:"
+send "n\r"
+expect "intersphinx: link between Sphinx documentation of different projects (y/n) [n]:"
+send "n\r"
+expect "todo: write \\todo entries that can be shown in the output (y/n) [n]:"
+send "n\r"
+expect "coverage: checks for documentation coverage (y/n) [n]:"
+send "n\r"
+expect "imgmath: include math, rendered as PNG or SVG images (y/n) [n]:"
+send "n\r"
+expect "mathjax: include math, rendered in the browser by MathJax (y/n) [n]:"
+send "n\r"
+expect "ifconfig: conditional inclusion of content based on config values (y/n) [n]:"
+send "n\r"
+expect "viewcode: include links to the source code of documented Python objects (y/n) [n]:"
+send "y\r"
+expect "githubpages: create .nojekyll file to publish the document on GitHub pages (y/n) [n]:"
+send "n\r"
+expect "Create Makefile? (y/n) [y]:"
+send "y\r"
+expect "Create Windows command file? (y/n) [y]:"
+send "n\r"
+
+# Wait for the process to finish
+expect eof
+
+puts "Sphinx documentation initialized in directory: $output_dir"
+

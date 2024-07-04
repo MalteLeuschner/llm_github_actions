@@ -2,14 +2,6 @@ from typing import Union
 
 
 def add(x: float, y: float) -> float:
-    """Adds two numbers together.
-
-    Args:
-      x (float): The first number to add.
-      y (float): The second number to add.
-
-    Returns:
-      float: The sum of x and y."""
     return x + y
 
 
