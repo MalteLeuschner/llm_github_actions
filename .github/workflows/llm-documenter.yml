@@ -46,7 +46,7 @@ jobs:
             mkdir -p docs
             sphinx-quickstart --sep --makefile --ext-autodoc --project="${{ github.event.repository.name }}" --author="LLM-Bot" --release="0.0.1" --language="en" docs
             echo "import sys, os" >> ./docs/source/conf.py
-            echo "sys.path.insert(0, os.path.abspath('../'))" >> ./docs/source/conf.py
+            echo "sys.path.insert(0, os.path.abspath('../..'))" >> ./docs/source/conf.py
             echo "extensions += ['sphinx.ext.napoleon', 'sphinx_rtd_theme']" >> ./docs/source/conf.py
             echo "html_theme = 'sphinx_rtd_theme'" >> ./docs/source/conf.py
           fi
@@ -54,7 +54,7 @@ jobs:
         run: |
           sphinx-apidoc -f -o docs/source ./
           python3.10 .github/workflows/readme.py ${{ github.event.repository.name }} ${{ secrets.GROQ_API_KEY }} ./src
-          sphinx-build -b singlehtml ./docs/source ./docs
+          sphinx-build -M html ./docs/source ./docs
           git add -f ./docs/*
       - name: Commit files
         run: | 
