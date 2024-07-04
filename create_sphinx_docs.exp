@@ -11,7 +11,7 @@ set output_dir "docs"
 file mkdir $output_dir
 
 # Start sphinx-quickstart process
-spawn sphinx-quickstart $output_dir
+sphinx-quickstart $output_dir
 
 # Provide answers to the prompts
 expect "Separate source and build directories (y/n) [n]:"
