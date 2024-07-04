@@ -19,7 +19,7 @@ jobs:
           python-version: '3.10'
           
       - name: Install python dependencies
-        run: pip install PyGithub astor argparse autopep8
+        run: pip install -r .github/workflows/requirements.txt
 
       - name: Read changed .py in commit
         id: python_script
@@ -28,15 +28,15 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_SHA: ${{ github.sha }}
         run: |
-          python src/read_changed_files.py
+          python3.10 .github/workflows/read_changed_files.py
 
       - name: Commit files with added dummyDS
         if: steps.python_script.outputs.changed_files != ''
         run: |
           echo "Generating list of outputs...!"
           for OUTPUT in "${{ steps.python_script.outputs.changed_files }}"; do
-            python3.10 src/abstract_tree.py $OUTPUT
-	    autopep8 --in-place --aggressive $OUTPUT
+            python3.10 .github/workflows/abstract_tree.py ${{ secrets.CROQUE_TOKEN }} $OUTPUT
+            autopep8 --in-place --aggressive $OUTPUT
             git add $OUTPUT
           done
           echo "Committing updated .py files...!"
