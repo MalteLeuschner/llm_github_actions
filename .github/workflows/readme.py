@@ -42,7 +42,7 @@ def get_project_readme(client: str, code: str, project_name: str) -> str:
                 ),
             },
         ],
-        model="llama3-70b-8192",
+        model="mixtral-8x7b-32768",
         temperature=0.0,
     )
     return chat_completion.choices[0].message.content
@@ -97,7 +97,7 @@ def get_code_description(client: str, code: str) -> str:
                 ),
             },
         ],
-        model="llama3-70b-8192",
+        model="mixtral-8x7b-32768",
         temperature=0.0,
     )
     return chat_completion.choices[0].message.content

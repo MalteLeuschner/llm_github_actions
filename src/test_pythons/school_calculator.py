@@ -56,17 +56,7 @@ def divide(x: float, y: float) -> Union[float, str]:
     return x / y
 
 
-def calculator() -> None:
-    """Calculator function.
-
-    Displays a menu for simple arithmetic operations and performs the chosen operation.
-
-    Args:
-        None
-    Returns:
-        None
-    Raises:
-        ValueError: If non-numeric values are entered for the numbers."""
+def school_calculator() -> None:
     print("Select operation:")
     print("1. Add")
     print("2. Subtract")
