@@ -8,7 +8,7 @@ set release "0.1.0"
 set output_dir "docs"
 
 # Create the output directory if it doesn't exist
-file mkdir $output_dir
+mkdir $output_dir
 
 # Start sphinx-quickstart process
 sphinx-quickstart $output_dir
