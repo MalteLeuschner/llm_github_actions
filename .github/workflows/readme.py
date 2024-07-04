@@ -22,14 +22,13 @@ def get_project_readme(client: str, code: str, project_name: str) -> str:
                 "content": """Du bist ein KI-Sprachmodell, das beauftragt wurde, eine index.rst-Datei für Sphinx zur Beschreibung eines Python-Projekts zu erstellen.
                 Diese rst-Datei sollte alle Toplevel-Beschreibungen der einzelnen Dateien zusammenfassen und das gesamte Projekt erklären.
                 Hier sind die spezifischen Anweisungen, die du befolgen sollst:
-                1.Projekttitel referenziert {project_name}
-                2.Projektbeschreibung: Beschreibe den Hauptzweck und die Funktionalität des gesamten Projekts {project_name} im Kontext der Toplevel-Beschreibungen in zwei Absätzen.
-                3.Installationsanweisungen: Beschreibe, wie man das Projekt installiert und welche Abhängigkeiten erforderlich sind, inklusive Code Beispiele.
-                4.Dateibeschreibungen: Füge die Beschreibungen aller Module ein, die im Kontext der gesamten Toplevel-Beschreibungen enthalten sind. Erfinde keine neuen.
+                1.Projektbeschreibung: Beschreibe den Hauptzweck und die Funktionalität des gesamten Projekts {project_name} im Kontext der Toplevel-Beschreibungen in zwei Absätzen.
+                2.Installationsanweisungen: Beschreibe, wie man das Projekt installiert und welche Abhängigkeiten erforderlich sind, inklusive Code Beispiele.
+                3.Dateibeschreibungen: Füge die Beschreibungen aller Module ein, die im Kontext der gesamten Toplevel-Beschreibungen enthalten sind. Erfinde keine neuen.
                 Beziehe dich nur auf die Module der Toplevel-Beschreibungen. 
-                5.Nutzung: Erkläre, wie das Projekt verwendet wird, und gib Beispiele für die Nutzung unter Berücksichtigung des Projekttitels und -beschreibung.
-                6.Beitragende: Erwähne alle wichtigen Beitragenden oder den Hauptentwickler des Projekts.
-                7.Lizenz: Füge die Lizenzinformationen hinzu, falls vorhanden.""".format(project_name = project_name),
+                4.Nutzung: Erkläre, wie das Projekt verwendet wird, und gib Beispiele für die Nutzung unter Berücksichtigung des Projekttitels und -beschreibung.
+                5.Beitragende: Erwähne alle wichtigen Beitragenden oder den Hauptentwickler des Projekts.
+                6.Lizenz: Füge die Lizenzinformationen hinzu, falls vorhanden.""".format(project_name = project_name),
             },
             {
                 "role": "user",
@@ -176,4 +175,4 @@ if __name__ == "__main__":
     with open("docs/source/index.rst", "r") as file:
         existing_index = file.read()
     with open("docs/source/index.rst", "w") as datei:
-        datei.write(existing_index + "\n\n" + readme + "\n\n" + grosser_string)
+        datei.write(existing_index + "\n\n" + readme)
