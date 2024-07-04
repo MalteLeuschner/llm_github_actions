@@ -56,6 +56,7 @@ jobs:
           sphinx-apidoc -f -o docs/source ./
           python3.10 .github/workflows/readme.py ${{ github.event.repository.name }} ${{ secrets.GROQ_API_KEY }} ./src
           sphinx-build -M html ./docs/source ./docs
+          touch ./docs/html/.nojekyll
           cp -r ./docs/html/* ./docs/
           rm -r ./docs/html
           git add -f ./docs/*
