@@ -51,6 +51,7 @@ jobs:
           fi
       - name: Render sphinx
         run: |
+          sphinx-apidoc -f -o docs/source ./
           sphinx-build -M html ./docs/source ./docs
           git add -f ./docs/*
       - name: Commit files
