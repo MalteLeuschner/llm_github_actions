@@ -42,7 +42,7 @@ jobs:
           done
       - name: Create Sphinx documentation
         run: |
-          mkdir docs
+          mkdir -p docs
           sphinx-quickstart --no-sep --makefile --project="${{ github.repository }}" --author="LLM-Bot" --release="0.0.1" --language="en" docs
           cd docs
           make html
