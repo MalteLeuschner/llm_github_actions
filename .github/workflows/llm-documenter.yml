@@ -6,6 +6,7 @@ permissions:
 
 jobs:
   document_changed_python_files:
+    concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     outputs:
       changed_files: ${{ steps.python_script.outputs.changed_files }}
