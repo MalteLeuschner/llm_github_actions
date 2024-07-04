@@ -1,6 +1,6 @@
 import os
 def main(test):
-    return test
+    return test + "_hahahaha"
 
 
 if __name__ == '__main__':
