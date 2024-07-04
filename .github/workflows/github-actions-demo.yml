@@ -43,8 +43,7 @@ jobs:
       - name: Create Sphinx documentation
         run: |
           mkdir docs
-          sphinx-quickstart --sep --project="${{ github.repository }}" --author="LLM-Bot" --release="0.0.1" --language="en" docs
-          make html
+          sphinx-quickstart --no-sep --makefile --project="${{ github.repository }}" --author="LLM-Bot" --release="0.0.1" --language="en" docs
           git add ./docs/
       - name: Commit files
         run: | 
