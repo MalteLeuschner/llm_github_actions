@@ -1,5 +1,6 @@
 import ast
 import os
+
 import astor
 import argparse
 from groq import Groq
@@ -107,12 +108,7 @@ class PythonParser(ast.NodeVisitor):
                         arg.annotation = ast.Name(id=typ, ctx=ast.Load())
                     if 'return' in new_typing:
                         node.returns = ast.Name(id=new_typing['return'], ctx=ast.Load())
-                    # try:
-                    #     astor.to_source(node.body)
-                    #     return self.generic_visit(node)
-                    # except SyntaxError:
-                    #     raise SyntaxWarning(f"The typing of the function {node.name} did not work!")
-                    return self.generic_visit(node)
+                return self.generic_visit(node)
 
         type_regex = re.compile(r'[A-Za-z\.]+')
         typing = new_typing['args']
@@ -130,14 +126,10 @@ class PythonParser(ast.NodeVisitor):
                              if ut[0].isupper() and ut != 'None'
                              and not ut.__contains__('.')]
         if additional_import:
-            source_code = f'from typing import {", ".join(additional_import)}\n{astor.to_source(self.tree)}'
+            return f'from typing import {", ".join(additional_import)}\n{astor.to_source(self.tree)}'
         else:
-            source_code = astor.to_source(self.tree)
-        try:
-            ast.parse(source_code)
-            return source_code
-        except SyntaxError as e:
-            raise SyntaxError(f'There has been an issue while parsing the source code!:\n{e}')
+            return astor.to_source(self.tree)
+
 
 class LlmCommenter:
     def __init__(self, groq_key):
@@ -203,6 +195,7 @@ class LlmCommenter:
         """
         lines = text.split('\n')
         filtered_lines = [line for line in lines if not line.strip().startswith("```")]
+        #filtered_lines = [line for line in filtered_lines if not line.strip().startswith('"\""')]
         return '\n'.join(filtered_lines)
 
     def extract_typing_from_docstring(self, docstring):
