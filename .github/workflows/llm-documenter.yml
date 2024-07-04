@@ -44,7 +44,7 @@ jobs:
         run: |
           if ! test -f "docs/makefile"; then
             mkdir -p docs
-            sphinx-quickstart --sep --makefile --ext-autodoc --project="${{ github.repository }}" --author="LLM-Bot" --release="0.0.1" --language="en" docs
+            sphinx-quickstart --sep --makefile --ext-autodoc --project="${{ github.event.repository.name }}" --author="LLM-Bot" --release="0.0.1" --language="en" docs
             echo "import sys, os" >> ./docs/source/conf.py
             echo "sys.path.insert(0, os.path.abspath('../..'))" >> ./docs/source/conf.py
             echo "extensions += ['sphinx.ext.napoleon', 'sphinx_rtd_theme']" >> ./docs/source/conf.py
