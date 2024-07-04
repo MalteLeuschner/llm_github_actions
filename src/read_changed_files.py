@@ -4,38 +4,14 @@ import sys
 
 
 def get_changed_files(repo, commit_sha):
-    """
-    This is an example Docstring
-    
-    Args:
-        a: an arg
-        
-    Returns:
-        b: some results
-    
-    Example:
-        A very good Example.
-"""
     commit = repo.get_commit(commit_sha)
     files = commit.files
     changed_files = [file.filename for file in files if file.filename.
-        endswith('.py')]
+        endswith('.py') and file.filename.startswith('src')]
     return changed_files
 
 
 def main():
-    """
-    This is an example Docstring
-    
-    Args:
-        a: an arg
-        
-    Returns:
-        b: some results
-    
-    Example:
-        A very good Example.
-"""
     token = os.getenv('GITHUB_TOKEN')
     if not token:
         print('GITHUB_TOKEN environment variable is not set.')
