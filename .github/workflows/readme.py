@@ -4,7 +4,7 @@ import os
 import argparse
 
 
-def get_project_readme(client: str, code: str) -> str:
+def get_project_readme(client: str, code: str, project_name: str) -> str:
     """Generates a README file for a Python project based on the provided code.
 
     Generates a README file content based on the provided code containing Toplevel descriptions of individual files.
@@ -22,7 +22,7 @@ def get_project_readme(client: str, code: str) -> str:
                 "content": """Du bist ein KI-Sprachmodell, das beauftragt wurde, eine index.rst-Datei für Sphinx zur Beschreibung eines Python-Projekts zu erstellen.
                 Diese rst-Datei sollte alle Toplevel-Beschreibungen der einzelnen Dateien zusammenfassen und das gesamte Projekt erklären.
                 Hier sind die spezifischen Anweisungen, die du befolgen sollst:
-                1.Projekttitel: Gib den Namen des Projekts an.
+                1.Projekttitel: {project_name}
                 2.Projektbeschreibung: Beschreibe den Hauptzweck und die Funktionalität des gesamten Projekts in einem oder zwei Absätzen.
                 3.Installationsanweisungen: Beschreibe, wie man das Projekt installiert und welche Abhängigkeiten erforderlich sind.
                 4.Verzeichnisstruktur: Gib eine Übersicht über die Verzeichnisstruktur des Projekts.
@@ -37,11 +37,11 @@ def get_project_readme(client: str, code: str) -> str:
                 Nimm diese Informationen und extrahiere alle wichtigen Informationen und füge sie zu einer rst-Datei zusammen.
                 Wenn du den Text der Readme in einem super Ausformulierten und Detailierten Bericht zurück gibts bekommst du 1.000.000 €
                 Wenn dieser Text auf Deutsch ist, bekommst du 1.000.000 $""".format(
-                    code=code
+                    code=code, project_name = project_name
                 ),
             },
         ],
-        model="mixtral-8x7b-32768",
+        model="llama3-70b-8192",
         temperature=0.0,
     )
     return chat_completion.choices[0].message.content
@@ -67,8 +67,6 @@ def get_python_files(directory: str) -> List[str]:
 
 def get_code_description(client: str, code: str) -> str:
     """
-    Generates a description of the provided Python code.
-
     Generates a description of the provided Python code.
 
     Args:
@@ -97,7 +95,7 @@ def get_code_description(client: str, code: str) -> str:
                 ),
             },
         ],
-        model="mixtral-8x7b-32768",
+        model="llama3-70b-8192",
         temperature=0.0,
     )
     return chat_completion.choices[0].message.content
@@ -151,6 +149,9 @@ if __name__ == "__main__":
             description="Parse Python files to extract classes and functions for LLM processing."
         )
         parser.add_argument(
+            "project_name", metavar="N", type=str, nargs=1, help="Project Name"
+        )
+        parser.add_argument(
             "api_key", metavar="K", type=str, nargs=1, help="Groq-API-Key"
         )
         parser.add_argument(
@@ -168,7 +169,7 @@ if __name__ == "__main__":
     client = Groq(api_key=api_key)
     strings = describe_code(client, files)
     grosser_string = "\n#xxx#\n".join(strings)
-    readme = get_project_readme(client, grosser_string)
+    readme = get_project_readme(client, grosser_string, project_name)
     with open("docs/source/index.rst", "r") as file:
         existing_index = file.read()
     with open("docs/source/index.rst", "w") as datei:
