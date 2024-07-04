@@ -165,3 +165,75 @@ License
 -------
 
 The project is licensed under the MIT License. For more information, see the `LICENSE` file.
+
+=====================
+LLM GitHub Actions
+=====================
+
+Project Description
+-------------------
+
+The LLM GitHub Actions project is a collection of Python scripts that perform various calculations and string manipulations. The project consists of three main scripts, each with its unique functionality.
+
+The first script contains a single function named `double` which takes an integer as an input and returns its double. The function does not contain any exceptions and has no class association.
+
+The second script contains a single function `add_string_to_name` that takes an input string `test` as an argument and returns a new string with '_name' appended to the end.
+
+The third script consists of five functions and one main function called `school_calculator`. The functions include `add`, `subtract`, `multiply`, `divide`, and `school_calculator`. The `school_calculator` function provides a simple calculator interface to perform basic arithmetic operations.
+
+Installation Instructions
+-------------------------
+
+To install the project, clone the repository to your local machine using the following command:
+
+.. code-block:: bash
+
+   git clone https://github.com/username/llm_github_actions.git
+
+The project requires Python 3.x to run. To check the Python version, use the following command:
+
+.. code-block:: bash
+
+   python --version
+
+The project has no external dependencies.
+
+File Descriptions
+-----------------
+
+The following are the descriptions of the files in the project:
+
+* `double.py`: Contains a single function named `double` which takes an integer as an input and returns its double.
+* `add_string_to_name.py`: Contains a single function `add_string_to_name` that takes an input string `test` as an argument and returns a new string with '_name' appended to the end.
+* `school_calculator.py`: Consists of five functions and one main function called `school_calculator`. The functions include `add`, `subtract`, `multiply`, `divide`, and `school_calculator`. The `school_calculator` function provides a simple calculator interface to perform basic arithmetic operations.
+
+Usage
+-----
+
+To use the `double` function, run the `double.py` script with the input value. For example, to double the number 5, run the following command:
+
+.. code-block:: bash
+
+   python double.py 5
+
+The output will be 10.
+
+To use the `add_string_to_name` function, run the `add_string_to_name.py` script with the input string. For example, to append '_name' to the string "Hello World", run the following command:
+
+.. code-block:: bash
+
+   python add_string_to_name.py "Hello World"
+
+The output will be "Hello World_name".
+
+To use the `school_calculator` function, run the `school_calculator.py` script and follow the prompts to enter the operation, first number, and second number. The script will then call the appropriate function based on the user's selection and print the result.
+
+Contributors
+------------
+
+The project was developed by John Doe.
+
+License
+-------
+
+The project is licensed under the MIT License.
