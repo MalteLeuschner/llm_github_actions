@@ -35,9 +35,14 @@ jobs:
         run: |
           echo "Generating list of outputs...!"
           for OUTPUT in "${{ steps.python_script.outputs.changed_files }}"; do
+<<<<<<< HEAD
             python3.10 .github/workflows/abstract_tree.py ${{ secrets.CROQUE_TOKEN }} $OUTPUT
             autopep8 --in-place --aggressive $OUTPUT
             git add $OUTPUT
+=======
+            python3.10 src/abstract_tree.py $OUTPUT
+	    git add $OUTPUT
+>>>>>>> b1ab4ac511619953a3ea1639c112eb7217ac6043
           done
           echo "Committing updated .py files...!"
           git config --global user.email "you@example.com"
