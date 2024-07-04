@@ -1,4 +1,4 @@
-def double(number: int)
+def double(number: int):
     return number * 2
 
 
