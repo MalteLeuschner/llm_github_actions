@@ -8,10 +8,10 @@ set release "0.1.0"
 set output_dir "docs"
 
 # Create the output directory if it doesn't exist
-mkdir $output_dir
+file mkdir $output_dir
 
 # Start sphinx-quickstart process
-sphinx-quickstart $output_dir
+spawn "sphinx-quickstart" $output_dir
 
 # Provide answers to the prompts
 expect "Separate source and build directories (y/n) [n]:"
