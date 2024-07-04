@@ -19,7 +19,7 @@ jobs:
           python-version: '3.10'
           
       - name: Install python dependencies
-        run: pip install PyGithub astor argparse
+        run: pip install PyGithub astor argparse autopep8
 
       - name: Read changed .py in commit
         id: python_script
@@ -36,6 +36,7 @@ jobs:
           echo "Generating list of outputs...!"
           for OUTPUT in "${{ steps.python_script.outputs.changed_files }}"; do
             python3.10 src/abstract_tree.py $OUTPUT
+	    autopep8 --in-place --aggressive $OUTPUT
             git add $OUTPUT
           done
           echo "Committing updated .py files...!"
