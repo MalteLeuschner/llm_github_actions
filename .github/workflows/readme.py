@@ -28,8 +28,8 @@ def get_project_readme(client: str, code: str, project_name: str) -> str:
                 4.Dateibeschreibungen: Füge die Beschreibungen aller Module ein, die im Kontext der gesamten Toplevel-Beschreibungen enthalten sind.
                 5.Nutzung: Erkläre, wie das Projekt verwendet wird, und gib Beispiele für die Nutzung unter Berücksichtigung des Projekttitels und -beschreibung.
                 6.Beitragende: Erwähne alle wichtigen Beitragenden oder den Hauptentwickler des Projekts.
-                7.Lizenz: Füge die Lizenzinformationen hinzu, falls vorhanden.""",
-            }.format(project_name = project_name),
+                7.Lizenz: Füge die Lizenzinformationen hinzu, falls vorhanden.""".format(project_name = project_name),
+            },
             {
                 "role": "user",
                 "content": """Hier ist für den Kontext die gesamten Toplevel-Beschreibungen, die einzeln durch das Zeichen (#xxx#) von einander getrennt sind: {code}.
