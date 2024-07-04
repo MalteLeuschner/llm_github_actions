@@ -25,12 +25,11 @@ def get_project_readme(client: str, code: str, project_name: str) -> str:
                 1.Projekttitel: Schreib den Titel: {project_name}
                 2.Projektbeschreibung: Beschreibe den Hauptzweck und die Funktionalität des gesamten Projekts im Kontext des {project_name} in zwei Absätzen.
                 3.Installationsanweisungen: Beschreibe, wie man das Projekt installiert und welche Abhängigkeiten erforderlich sind, inklusive Code Beispiele.
-                4.Verzeichnisstruktur: Gib eine Übersicht über die Verzeichnisstruktur des Projekts.
-                5.Dateibeschreibungen: Füge die Toplevel-Beschreibungen aller Dateien ein, die im Projekt enthalten sind.
-                6.Nutzung: Erkläre, wie das Projekt verwendet wird, und gib Beispiele für die Nutzung.
-                7.Beitragende: Erwähne alle wichtigen Beitragenden oder den Hauptentwickler des Projekts.
-                8.Lizenz: Füge die Lizenzinformationen hinzu, falls vorhanden.""",
-            },
+                4.Dateibeschreibungen: Füge die Beschreibungen aller Module ein, die im Kontext der gesamten Toplevel-Beschreibungen enthalten sind.
+                5.Nutzung: Erkläre, wie das Projekt verwendet wird, und gib Beispiele für die Nutzung unter Berücksichtigung des Projekttitels und -beschreibung.
+                6.Beitragende: Erwähne alle wichtigen Beitragenden oder den Hauptentwickler des Projekts.
+                7.Lizenz: Füge die Lizenzinformationen hinzu, falls vorhanden.""",
+            }.format(project_name = project_name),
             {
                 "role": "user",
                 "content": """Hier ist für den Kontext die gesamten Toplevel-Beschreibungen, die einzeln durch das Zeichen (#xxx#) von einander getrennt sind: {code}.
