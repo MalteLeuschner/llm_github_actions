@@ -28,21 +28,21 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_SHA: ${{ github.sha }}
         run: |
-          python3.10 src/read_changed_files.py
+          python3.10 .github/workflows/read_changed_files.py
 
       - name: Commit files with added dummyDS
         if: steps.python_script.outputs.changed_files != ''
         run: |
           echo "Generating list of outputs...!"
           for OUTPUT in "${{ steps.python_script.outputs.changed_files }}"; do
-            python3.10 src/abstract_tree.py ${{ secrets.GROQ_API_KEY }} $OUTPUT
+            python3.10 .github/workflows/abstract_tree.py ${{ secrets.GROQ_API_KEY }} $OUTPUT
             autopep8 --in-place --aggressive $OUTPUT
             black $OUTPUT
             git add $OUTPUT
           done
       - name: Init Sphinx documentation
         run: |
-          if ! test -f "docs/index.rst"; then
+          if ! test -f "docs/makefile; then
             mkdir -p docs
             sphinx-quickstart --sep --makefile --ext-autodoc --project="${{ github.repository }}" --author="LLM-Bot" --release="0.0.1" --language="en" docs
             echo "import sys, os" >> ./docs/source/conf.py
