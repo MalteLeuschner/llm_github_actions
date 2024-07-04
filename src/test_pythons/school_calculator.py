@@ -1,7 +1,21 @@
 from typing import Union
+from typing import Union
 
 
 def add(x: float, y: float) -> float:
+    """Adds two numbers.
+
+    This function takes two numbers as input and returns their sum.
+
+    Args:
+      x (float): The first number.
+      y (float): The second number.
+
+    Returns:
+      float: The sum of x and y.
+
+    Raises:
+      None"""
     return x + y
 
 
@@ -57,6 +71,18 @@ def divide(x: float, y: float) -> Union[float, str]:
 
 
 def school_calculator() -> None:
+    """School calculator function.
+
+    This function provides a simple calculator interface to perform basic arithmetic operations.
+
+    Args:
+      None
+
+    Returns:
+      None
+
+    Raises:
+      ValueError: If the input values are not numeric."""
     print("Select operation:")
     print("1. Add")
     print("2. Subtract")
