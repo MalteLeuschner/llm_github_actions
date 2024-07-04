@@ -19,154 +19,25 @@ def get_project_readme(client: str, code: str, project_name: str) -> str:
         messages=[
             {
                 "role": "system",
-                "content": """Please generate a Sphinx .rst (reStructuredText) file for my Python project. Use the following information to create a detailed and well-structured documentation file:
-
-    Project Information:
-        Project Name: [Your Project Name]
-        Project Description: [A brief description of what your project does]
-        Author(s): [List of authors or contributors]
-        Project Version: [Current version of the project]
-
-    Content Structure:
-
-        Title and Subtitle:
-            Title: [Project Name]
-            Subtitle: [Project Description]
-
-        Table of Contents: Include a table of contents with the following sections:
-            Introduction
-            Installation
-            Usage
-            Modules
-            Contributing
-            License
-            FAQ
-            Changelog
-
-        Introduction:
-            Describe the purpose and goals of the project.
-            Mention any prerequisites or dependencies.
-
-        Installation:
-            Provide instructions on how to install the project using pip and manually from the repository.
-
-        Usage:
-            Include examples and code snippets demonstrating how to use the project.
-
-        Modules:
-            Document the modules and sub-modules in the project.
-            Use autodoc to automatically generate documentation from the docstrings.
-
-        Contributing:
-            Explain how others can contribute to the project.
-
-        License:
-            Specify the license under which the project is distributed.
-
-        FAQ:
-            Include a section for frequently asked questions.
-
-        Changelog:
-            Provide a changelog section to include updates and changes.""".format(project_name = project_name),
+                "content": """Du bist ein KI-Sprachmodell, das beauftragt wurde, eine index.rst-Datei für Sphinx zur Beschreibung eines Python-Projekts zu erstellen.
+                Diese rst-Datei sollte alle Toplevel-Beschreibungen der einzelnen Dateien zusammenfassen und das gesamte Projekt erklären.
+                Hier sind die spezifischen Anweisungen, die du befolgen sollst:
+                1.Projekttitel referenziert {project_name}
+                2.Projektbeschreibung: Beschreibe den Hauptzweck und die Funktionalität des gesamten Projekts {project_name} im Kontext der Toplevel-Beschreibungen in zwei Absätzen.
+                3.Installationsanweisungen: Beschreibe, wie man das Projekt installiert und welche Abhängigkeiten erforderlich sind, inklusive Code Beispiele.
+                4.Dateibeschreibungen: Füge die Beschreibungen aller Module ein, die im Kontext der gesamten Toplevel-Beschreibungen enthalten sind. Erfinde keine neuen.
+                Beziehe dich nur auf die Module der Toplevel-Beschreibungen, die durch das Zeichen (#xxx#) voneinander getrennt sind
+                5.Nutzung: Erkläre, wie das Projekt verwendet wird, und gib Beispiele für die Nutzung unter Berücksichtigung des Projekttitels und -beschreibung.
+                6.Beitragende: Erwähne alle wichtigen Beitragenden oder den Hauptentwickler des Projekts.
+                7.Lizenz: Füge die Lizenzinformationen hinzu, falls vorhanden.""".format(project_name = project_name),
             },
             {
                 "role": "user",
-                "content": """Here are the descriptions of python files seperated by (#xxx#): {code}.
-                This is an example .rts: [Project Name]
-==============
-
-[A brief description of what your project does.]
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-   introduction
-   installation
-   usage
-   modules
-   contributing
-   license
-   faq
-   changelog
-
-Introduction
-============
-
-[Project Description]
-
-This project aims to [goals and purpose].
-
-Prerequisites:
-- Python 3.x
-- [Other dependencies]
-
-Installation
-============
-
-You can install the project using pip:
-
-.. code-block:: bash
-
-   pip install [project-name]
-
-Or clone the repository and install manually:
-
-.. code-block:: bash
-
-   git clone [repository-url]
-   cd [project-directory]
-   python setup.py install
-
-Usage
-=====
-
-Here are some examples of how to use the project:
-
-.. code-block:: python
-
-   import [project-name]
-
-   # Example usage
-   [project-name].example_function()
-
-Modules
-=======
-
-.. automodule:: [project-name]
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-Contributing
-============
-
-We welcome contributions! Here are some ways you can help:
-
-- Report bugs
-- Suggest features
-- Submit pull requests
-
-For more details, see the `contributing guide <link-to-contributing-guide>`_.
-
-License
-=======
-
-This project is licensed under the [License Name]. See the LICENSE file for more details.
-
-FAQ
-===
-
-**Q:** [Question]
-
-**A:** [Answer]
-
-Changelog
-=========
-
-.. include:: changelog.rst
-                Use this example and descriptions to ensure the .rst file is comprehensive and user-friendly.
-                Answer in English.""".format(
+                "content": """Hier ist für den Kontext die gesamten Toplevel-Beschreibungen, die einzelnd durch das Zeichen (#xxx#) voneinander getrennt sind: {code}.
+                Nimm diese Informationen und extrahiere alle wichtigen Informationen und füge sie zu einer rst-Datei zusammen.
+                Wenn du den Text der Readme in einem super Ausformulierten und Detailierten Bericht zurück gibts bekommst du 1.000.000 €
+                Wenn dieser Text auf Deutsch ist, bekommst du 1.000.000 $.
+                Antworte auf Englisch.""".format(
                     code=code, project_name = project_name
                 ),
             },
