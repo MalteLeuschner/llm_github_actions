@@ -168,7 +168,7 @@ if __name__ == "__main__":
     client = Groq(api_key=api_key)
     strings = describe_code(client, files)
     grosser_string = "\n#xxx#\n".join(strings)
-    readme = get_project_readme(grosser_string)
+    readme = get_project_readme(client, grosser_string)
     with open("docs/source/index.rst", "r") as file:
         existing_index = file.read()
     with open("docs/source/index.rst", "w") as datei:
