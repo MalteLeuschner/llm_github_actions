@@ -48,9 +48,8 @@ jobs:
           fi
       - name: Render sphinx
         run: |
-          cd docs
-          make html
-          git add -f ../docs/*
+          sphinx-build -M html ./docs ./docs
+          git add -f ./docs/*
       - name: Commit files
         run: | 
           echo "Committing updated .py files...!"
