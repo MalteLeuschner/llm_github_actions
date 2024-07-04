@@ -158,7 +158,7 @@ if __name__ == "__main__":
         )
         args = parser.parse_args()
         api_key = args.api_key[0]
-        files = get_python_files(args.files)
+        files = get_python_files(args.files[0])
     else:
         from dotenv import load_dotenv
 
