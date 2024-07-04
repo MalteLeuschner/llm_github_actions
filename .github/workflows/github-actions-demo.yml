@@ -42,10 +42,8 @@ jobs:
           done
       - name: Create Sphinx documentation
         run: |
-          sudo apt-get update
-          sudo apt-get install expect
-          chmod +x ./create_sphinx_docs.exp
-          expect ./create_sphinx_docs.exp
+          mkdir docs
+          sphinx-quickstart --sep --project="${{ github.repository }}" --author="LLM-Bot" --release="0.0.1" --language="en" docs
           make html
           git add ./docs/
       - name: Commit files
