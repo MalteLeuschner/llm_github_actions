@@ -42,7 +42,7 @@ jobs:
           done
       - name: Init Sphinx documentation
         run: |
-          if test -f "docs/Makefile"; then
+          if ! test -f "docs/Makefile"; then
             mkdir -p docs
             sphinx-quickstart --no-sep --makefile --project="${{ github.repository }}" --author="LLM-Bot" --release="0.0.1" --language="en" docs
           fi
