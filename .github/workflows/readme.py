@@ -72,7 +72,7 @@ def get_project_readme(client: str, code: str, project_name: str) -> str:
             {
                 "role": "user",
                 "content": """Here are the descriptions of python files seperated by (#xxx#): {code}.
-                This is an example .rts: {[Project Name]
+                This is an example .rts: [Project Name]
 ==============
 
 [A brief description of what your project does.]
@@ -165,7 +165,6 @@ Changelog
 =========
 
 .. include:: changelog.rst
-}
                 Use this example and descriptions to ensure the .rst file is comprehensive and user-friendly.
                 Answer in English.""".format(
                     code=code, project_name = project_name
