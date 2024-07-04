@@ -40,10 +40,14 @@ jobs:
             black $OUTPUT
             git add $OUTPUT
           done
-      - name: Create Sphinx documentation
+      - name: Init Sphinx documentation
         run: |
-          mkdir -p docs
-          sphinx-quickstart --no-sep --makefile --project="${{ github.repository }}" --author="LLM-Bot" --release="0.0.1" --language="en" docs
+          if test -f "docs/Makefile"; then
+            mkdir -p docs
+            sphinx-quickstart --no-sep --makefile --project="${{ github.repository }}" --author="LLM-Bot" --release="0.0.1" --language="en" docs
+          fi
+      - name: Render sphinx
+        run: |
           cd docs
           make html
           git add ../docs/
