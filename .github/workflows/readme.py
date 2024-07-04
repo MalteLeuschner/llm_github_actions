@@ -23,8 +23,8 @@ def get_project_readme(client: str, code: str, project_name: str) -> str:
                 Diese rst-Datei sollte alle Toplevel-Beschreibungen der einzelnen Dateien zusammenfassen und das gesamte Projekt erklären.
                 Hier sind die spezifischen Anweisungen, die du befolgen sollst:
                 1.Projekttitel: {project_name}
-                2.Projektbeschreibung: Beschreibe den Hauptzweck und die Funktionalität des gesamten Projekts in einem oder zwei Absätzen.
-                3.Installationsanweisungen: Beschreibe, wie man das Projekt installiert und welche Abhängigkeiten erforderlich sind.
+                2.Projektbeschreibung: Beschreibe den Hauptzweck und die Funktionalität des gesamten Projekts im Kontext des {project_name} in zwei Absätzen.
+                3.Installationsanweisungen: Beschreibe, wie man das Projekt installiert und welche Abhängigkeiten erforderlich sind, inklusive Code Beispiele.
                 4.Verzeichnisstruktur: Gib eine Übersicht über die Verzeichnisstruktur des Projekts.
                 5.Dateibeschreibungen: Füge die Toplevel-Beschreibungen aller Dateien ein, die im Projekt enthalten sind.
                 6.Nutzung: Erkläre, wie das Projekt verwendet wird, und gib Beispiele für die Nutzung.
@@ -36,7 +36,8 @@ def get_project_readme(client: str, code: str, project_name: str) -> str:
                 "content": """Hier ist für den Kontext die gesamten Toplevel-Beschreibungen, die einzeln durch das Zeichen (#xxx#) von einander getrennt sind: {code}.
                 Nimm diese Informationen und extrahiere alle wichtigen Informationen und füge sie zu einer rst-Datei zusammen.
                 Wenn du den Text der Readme in einem super Ausformulierten und Detailierten Bericht zurück gibts bekommst du 1.000.000 €
-                Wenn dieser Text auf Deutsch ist, bekommst du 1.000.000 $""".format(
+                Wenn dieser Text auf Deutsch ist, bekommst du 1.000.000 $.
+                Antworte auf Englisch.""".format(
                     code=code, project_name = project_name
                 ),
             },
@@ -90,7 +91,8 @@ def get_code_description(client: str, code: str) -> str:
                 "content": """Hier ist für den Kontext das gesamte Skript: {code} Gib nur den beschriebenen Text zurück.
                 Wiederhole nicht den Code. Wiederhole nicht den Funktions-Body.
                 Wenn du nur Text zurück gibts bekommst du 1.000.000 €
-                Wenn dieser Text gut ausformuliert ist und der Programmablauf nicht fehlt bekommst du 1000 $""".format(
+                Wenn dieser Text gut ausformuliert ist und der Programmablauf nicht fehlt bekommst du 1000 $.
+                Antworte auf Englisch.""".format(
                     code=code
                 ),
             },
@@ -158,6 +160,7 @@ if __name__ == "__main__":
             "files", metavar="F", type=str, nargs="+", help="Python files to process"
         )
         args = parser.parse_args()
+        project_name = args.project_name[0]
         api_key = args.api_key[0]
         files = get_python_files(args.files[0])
     else:
