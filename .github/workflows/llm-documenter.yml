@@ -67,7 +67,7 @@ jobs:
           git config --global user.name "LLM-Docstring-Agent"
           git commit -am "LLM-documented files pushed"
           git push
-          git checkout gh-pages
+          git checkout -b gh-pages
           git rm .nojekyll
           git commit -m "remove .nojekyll"
           git push
