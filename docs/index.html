@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to llm_github_actions’s documentation! &mdash; llm_github_actions 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            llm_github_actions
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to llm_github_actions’s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">llm_github_actions</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Welcome to llm_github_actions’s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-llm-github-actions-s-documentation">
+<h1>Welcome to llm_github_actions’s documentation!<a class="headerlink" href="#welcome-to-llm-github-actions-s-documentation" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+<p>The OCRHandler class is initialized with the path to the Tesseract command. It has an <strong>init</strong> method that sets up the Tesseract command for the OCR process. The class also has a perform_ocr method that performs Optical Character Recognition (OCR) on an image, reads the text in it using the Tesseract OCR engine, and returns the extracted text.</p>
+<p><strong>Args:</strong></p>
+<ul class="simple">
+<li><p>tesseract_cmd (str): The path to the Tesseract command.</p></li>
+<li><p>image_path (str): The path to the image file.</p></li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li><p>None for <strong>init</strong> method.</p></li>
+<li><p>str: The extracted text from the image for perform_ocr method.</p></li>
+</ul>
+<p><strong>Raises:</strong></p>
+<ul class="simple">
+<li><p>IOError: If the image file cannot be opened for perform_ocr method.</p></li>
+</ul>
+<p>The DatabaseHandler Klasse enables interaction with an SQLite database. It has a number of methods to create a table, insert transactions, retrieve all transactions, and close the database connection.</p>
+<ul class="simple">
+<li><p>The <strong>init</strong> constructor creates a database connection and initializes the cursor. It also creates the transactions table if it does not already exist.</p></li>
+<li><p>The create_table method creates the transactions table in the database.</p></li>
+<li><p>The insert_transaction method inserts a new transaction into the database.</p></li>
+<li><p>The query_transactions method retrieves all transactions from the database and returns them as a list of tuples.</p></li>
+<li><p>The close method closes the database connection.</p></li>
+</ul>
+<p>The DataVisualizer class is designed for visualizing financial data. It takes in a dictionary containing ‘Date’ and ‘Amount’ data. If the input data is not in the correct format, a ValueError is raised.</p>
+<p>The DataVisualizer class has three methods:</p>
+<ol class="arabic simple">
+<li><p>display_data(): This method displays the transaction data in a dataframe. It is used to show the transaction data in a tabular format for the user to view.</p></li>
+<li><p>plot_line_chart(): This method plots a line chart of transaction amounts over time. It generates a line chart using matplotlib, where the x-axis represents the date and the y-axis represents the amount. The chart is then displayed using streamlit. If the dataframe is empty or does not contain the required columns, a ValueError is raised.</p></li>
+<li><p>plot_bar_chart(): This method displays a bar chart of transaction amounts over time. It generates a bar chart using the provided data, with dates on the x-axis and amounts on the y-axis. If the data is not in the correct format, a ValueError is raised.</p></li>
+</ol>
+<p>The main function of the script runs the entire data visualization process. It first defines a dictionary containing transaction data. Then, it creates a DataVisualizer instance with the transaction data. The main function then sets the title of the streamlit app and displays the transaction data, line chart, and bar chart using the DataVisualizer methods.</p>
+<p>The script initializes by importing necessary libraries. Then, the DataVisualizer class is defined with its methods. The main function creates a dictionary containing transaction data, creates a DataVisualizer instance, sets the title of the streamlit app, and displays the transaction data, line chart, and bar chart using the DataVisualizer methods. Finally, the script runs the main function if it is being run as the main module.</p>
+<p>To install the project, clone the repository and run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>pip install -r requirements.txt</p>
+<p>The project requires the following dependencies:</p>
+<ul class="simple">
+<li><p>Tesseract</p></li>
+<li><p>Pillow</p></li>
+<li><p>SQLite</p></li>
+<li><p>Matplotlib</p></li>
+<li><p>Streamlit</p></li>
+</ul>
+<p>The project has the following directory structure:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>root</dt><dd><ul>
+<li><p>ocr_handler.py</p></li>
+<li><p>database_handler.py</p></li>
+<li><p>data_visualizer.py</p></li>
+<li><p>main.py</p></li>
+<li><p>requirements.txt</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>The project can be used as follows:</p>
+<ol class="arabic simple">
+<li><p>Initialize an instance of the OCRHandler class with the path to the Tesseract command.</p></li>
+<li><p>Use the perform_ocr method to extract text from an image file.</p></li>
+<li><p>Initialize an instance of the DatabaseHandler class with the path to the SQLite database.</p></li>
+<li><p>Use the insert_transaction method to insert transactions into the database.</p></li>
+<li><p>Use the query_transactions method to retrieve all transactions from the database.</p></li>
+<li><p>Initialize an instance of the DataVisualizer class with the transaction data.</p></li>
+<li><p>Use the display_data method to display the transaction data in a tabular format.</p></li>
+<li><p>Use the plot_line_chart method to plot a line chart of transaction amounts over time.</p></li>
+<li><p>Use the plot_bar_chart method to display a bar chart of transaction amounts over time.</p></li>
+</ol>
+<p>The project was contributed to by:</p>
+<ul class="simple">
+<li><p>[Your Name]</p></li>
+</ul>
+<p>This project is licensed under the [MIT License].</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, LLM-Bot.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
