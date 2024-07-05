@@ -1,7 +1,9 @@
 ![Waterkant Image](waterkant.png)
+
 <h1 align="center">
    Auto-documentation with LLMs in Python
 </h1>
+
 
 We implement a github actions llm that creates docstrings, typing, linting, and sphinx autodocumenation
 This was done during coding.waterkant hackathon in Kiel
