@@ -4,45 +4,15 @@ import sqlite3
 
 
 class DatabaseHandler:
-    """:
-    DatabaseHandler is a class that handles database operations.
-    It creates a connection to a SQLite database, creates a table for transactions,
-    and provides methods to insert transactions and query them.
-
-    Args:
-        db_name (str): The name of the database file.
-
-    Note: I did not include the docstrings for the methods of the class as you only asked for the docstring of the class itself.
-    """
 
     def __init__(self, db_name: str) -> None:
-        """Initializes a DatabaseHandler instance.
 
-        Creates a connection to a SQLite database and initializes a cursor.
-
-        Args:
-            db_name (str): The name of the database file.
-
-        Returns:
-            None"""
         self.conn = sqlite3.connect(db_name)
         self.cursor = self.conn.cursor()
         self.create_table()
 
     def create_table(self) -> None:
-        """Creates a table in the database if it does not exist.
 
-        This method creates a table named 'transactions' with columns 'id', 'date', 'description', and 'amount'
-        if the table does not already exist in the database.
-
-        Args:
-            None
-
-        Returns:
-            None
-
-        Raises:
-            sqlite3.Error: If there is an error while creating the table."""
         self.cursor.execute(
             """
         CREATE TABLE IF NOT EXISTS transactions (
@@ -55,20 +25,7 @@ class DatabaseHandler:
         )
 
     def insert_transaction(self, date: str, description: str, amount: float) -> None:
-        """Inserts a new transaction into the database.
 
-        Inserts a new transaction into the transactions table with the given date, description, and amount.
-
-        Args:
-            date (str): The date of the transaction.
-            description (str): A brief description of the transaction.
-            amount (float): The amount of the transaction.
-
-        Returns:
-            None
-
-        Raises:
-            sqlite3.Error: If there is an error executing the SQL query."""
         self.cursor.execute(
             """
         INSERT INTO transactions (date, description, amount)
