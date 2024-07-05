@@ -1,4 +1,4 @@
-from typing import List, Groq, Union
+from typing import List, Union
 from groq import Groq
 import os
 import argparse
