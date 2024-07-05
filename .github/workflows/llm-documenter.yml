@@ -69,7 +69,7 @@ jobs:
           git push
           git checkout -b gh-pages
           git rm .nojekyll
-          git commit -m "remove .nojekyll"
+          git commit -am "remove .nojekyll"
           git push
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
