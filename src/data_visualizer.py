@@ -1,11 +1,19 @@
-from typing import Dict, List
+from typing import List, Dict
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
 
-
 class DataVisualizer:
+    """DataVisualizer class for visualizing transaction data.
+
+    Creates a pandas DataFrame from the provided data for further visualization.
+
+    Args:
+        data (Dict[str, List[str]]): A dictionary containing transaction data.
+
+    Returns:
+        None"""
 
     def __init__(self, data: Dict[str, List[str]]) -> None:
         """Initiates a DataVisualizer instance.
@@ -63,13 +71,13 @@ class DataVisualizer:
         This function generates a bar chart using the provided data, with dates on the x-axis and amounts on the y-axis.
 
         Args:
-          self (DataVisualizer): The DataVisualizer instance.
+            self (DataVisualizer): The DataVisualizer instance.
 
         Returns:
-          None
+            None
 
         Raises:
-          ValueError: If the data is not in the correct format."""
+            ValueError: If the data is not in the correct format."""
         st.write("### Bar Chart of Amounts")
         fig, ax = plt.subplots()
         ax.bar(self.df["Date"], self.df["Amount"])
