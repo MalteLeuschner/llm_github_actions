@@ -3,21 +3,20 @@ from PIL import Image
 
 
 class OCRHandler:
-    """Initializes an OCRHandler instance.
+    """Initializes an OCRHandler instance with a tesseract command.
 
-    Sets up the tesseract command for the OCR process.
+    This class handles OCR operations using pytesseract.
 
     Args:
-      tesseract_cmd (str): The path to the tesseract command."""
+        tesseract_cmd (str): The path to the tesseract command."""
 
     def __init__(self, tesseract_cmd: str) -> None:
-        """Initiates the OCRHandler with the path to the Tesseract command.
+        """Initiates the OCRHandler instance.
 
-        The OCRHandler class requires the path to the Tesseract command to function correctly.
+        Sets the tesseract command for the pytesseract library.
 
         Args:
-            tesseract_cmd (str): The path to the Tesseract command.
-
+            tesseract_cmd (str): The path to the tesseract command.
         Returns:
             None"""
         pytesseract.pytesseract.tesseract_cmd = tesseract_cmd
@@ -25,8 +24,7 @@ class OCRHandler:
     def perform_ocr(self, image_path: str) -> str:
         """Performs Optical Character Recognition (OCR) on an image.
 
-        This function opens an image, reads the text in it using Tesseract OCR engine,
-        and returns the extracted text.
+        This function uses the pytesseract library to extract text from an image.
 
         Args:
             image_path (str): The path to the image file.
@@ -35,7 +33,7 @@ class OCRHandler:
             str: The extracted text from the image.
 
         Raises:
-            IOError: If the image file cannot be opened."""
+            FileNotFoundError: If the image file does not exist."""
         image = Image.open(image_path)
         text = pytesseract.image_to_string(image)
         return text

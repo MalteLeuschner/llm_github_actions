@@ -109,16 +109,18 @@
 <dt class="sig sig-object py" id="src.database_handler.DatabaseHandler">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.database_handler.</span></span><span class="sig-name descname"><span class="pre">DatabaseHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.database_handler.DatabaseHandler" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>:
-DatabaseHandler is a class that handles database operations.
-It creates a connection to a SQLite database, creates a table for transactions,
-and provides methods to insert transactions and query them.</p>
+<p>Database handler class.</p>
+<p>This class handles the interaction with the SQLite database. It creates a table for
+transactions, inserts transactions, queries transactions, and closes the database
+connection.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>db_name</strong> (<em>str</em>) – The name of the database file.</p>
 </dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
 </dl>
-<p>Note: I did not include the docstrings for the methods of the class as you only asked for the docstring of the class itself.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.database_handler.DatabaseHandler.close">
 <span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.database_handler.DatabaseHandler.close" title="Link to this definition"></a></dt>
@@ -147,7 +149,7 @@ if the table does not already exist in the database.</p>
 <dd class="field-even"><p>None</p>
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>sqlite3.Error</strong> – If there is an error while creating the table.</p>
+<dd class="field-odd"><p><strong>sqlite3.Error</strong> – If a database error occurs during table creation.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -155,13 +157,13 @@ if the table does not already exist in the database.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.database_handler.DatabaseHandler.insert_transaction">
 <span class="sig-name descname"><span class="pre">insert_transaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.database_handler.DatabaseHandler.insert_transaction" title="Link to this definition"></a></dt>
-<dd><p>Inserts a new transaction into the database.</p>
-<p>Inserts a new transaction into the transactions table with the given date, description, and amount.</p>
+<dd><p>Inserts a transaction into the database.</p>
+<p>This method executes a SQL query to insert a transaction into the database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>date</strong> (<em>str</em>) – The date of the transaction.</p></li>
-<li><p><strong>description</strong> (<em>str</em>) – A brief description of the transaction.</p></li>
+<li><p><strong>description</strong> (<em>str</em>) – A description of the transaction.</p></li>
 <li><p><strong>amount</strong> (<em>float</em>) – The amount of the transaction.</p></li>
 </ul>
 </dd>
@@ -169,7 +171,7 @@ if the table does not already exist in the database.</p>
 <dd class="field-even"><p>None</p>
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>sqlite3.Error</strong> – If there is an error executing the SQL query.</p>
+<dd class="field-odd"><p><strong>sqlite3.Error</strong> – If a database error occurs during query execution.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -221,8 +223,8 @@ querying all transactions, and printing them.</p>
 <dt class="sig sig-object py" id="src.ocr_handler.OCRHandler">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.ocr_handler.</span></span><span class="sig-name descname"><span class="pre">OCRHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tesseract_cmd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.ocr_handler.OCRHandler" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Initializes an OCRHandler instance.</p>
-<p>Sets up the tesseract command for the OCR process.</p>
+<p>Initializes an OCRHandler instance with a tesseract command.</p>
+<p>This class handles OCR operations using pytesseract.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>tesseract_cmd</strong> (<em>str</em>) – The path to the tesseract command.</p>
@@ -232,8 +234,7 @@ querying all transactions, and printing them.</p>
 <dt class="sig sig-object py" id="src.ocr_handler.OCRHandler.perform_ocr">
 <span class="sig-name descname"><span class="pre">perform_ocr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#src.ocr_handler.OCRHandler.perform_ocr" title="Link to this definition"></a></dt>
 <dd><p>Performs Optical Character Recognition (OCR) on an image.</p>
-<p>This function opens an image, reads the text in it using Tesseract OCR engine,
-and returns the extracted text.</p>
+<p>This function uses the pytesseract library to extract text from an image.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>image_path</strong> (<em>str</em>) – The path to the image file.</p>
@@ -245,7 +246,7 @@ and returns the extracted text.</p>
 <dd class="field-odd"><p>str</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>IOError</strong> – If the image file cannot be opened.</p>
+<dd class="field-even"><p><strong>FileNotFoundError</strong> – If the image file does not exist.</p>
 </dd>
 </dl>
 </dd></dl>

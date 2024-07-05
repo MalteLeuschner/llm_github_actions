@@ -4,6 +4,9 @@ on: [push]
 permissions:
   contents: write
 
+env:
+  SOURCE_PATH: 'src'
+
 jobs:
   document_changed_python_files:
     concurrency: ci-${{ github.ref }}
@@ -20,7 +23,7 @@ jobs:
           python-version: '3.10'
           
       - name: Install python dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r .github/workflows/requirements.txt
 
       - name: Read changed .py in commit
         id: python_script
@@ -29,7 +32,7 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_SHA: ${{ github.sha }}
         run: |
-          python3.10 .github/workflows/read_changed_files.py
+          python3.10 .github/workflows/read_changed_files.py $SOURCE_PATH
 
       - name: Commit files with added dummyDS
         if: steps.python_script.outputs.changed_files != ''
@@ -54,7 +57,7 @@ jobs:
       - name: Render sphinx
         run: |
           sphinx-apidoc -f -o docs/source ./
-          python3.10 .github/workflows/readme.py ${{ secrets.GROQ_API_KEY }} ./src
+          python3.10 .github/workflows/readme.py ${{ secrets.GROQ_API_KEY }} $SOURCE_PATH
           sphinx-build -M html ./docs/source ./docs
           cp -r ./docs/html/* ./docs/
           rm -r ./docs/html

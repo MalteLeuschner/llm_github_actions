@@ -3,21 +3,24 @@ import sqlite3
 
 
 class DatabaseHandler:
-    """:
-    DatabaseHandler is a class that handles database operations.
-    It creates a connection to a SQLite database, creates a table for transactions,
-    and provides methods to insert transactions and query them.
+    """
+    Database handler class.
+
+    This class handles the interaction with the SQLite database. It creates a table for
+    transactions, inserts transactions, queries transactions, and closes the database
+    connection.
 
     Args:
         db_name (str): The name of the database file.
 
-    Note: I did not include the docstrings for the methods of the class as you only asked for the docstring of the class itself.
+    Returns:
+        None
     """
 
     def __init__(self, db_name: str) -> None:
-        """Initializes a DatabaseHandler instance.
+        """Initializes a DatabaseHandler object.
 
-        Creates a connection to a SQLite database and initializes a cursor.
+        Creates a connection to a SQLite database and initializes a cursor object.
 
         Args:
             db_name (str): The name of the database file.
@@ -41,7 +44,7 @@ class DatabaseHandler:
             None
 
         Raises:
-            sqlite3.Error: If there is an error while creating the table."""
+            sqlite3.Error: If a database error occurs during table creation."""
         self.cursor.execute(
             """
         CREATE TABLE IF NOT EXISTS transactions (
@@ -54,20 +57,20 @@ class DatabaseHandler:
         )
 
     def insert_transaction(self, date: str, description: str, amount: float) -> None:
-        """Inserts a new transaction into the database.
+        """Inserts a transaction into the database.
 
-        Inserts a new transaction into the transactions table with the given date, description, and amount.
+        This method executes a SQL query to insert a transaction into the database.
 
         Args:
             date (str): The date of the transaction.
-            description (str): A brief description of the transaction.
+            description (str): A description of the transaction.
             amount (float): The amount of the transaction.
 
         Returns:
             None
 
         Raises:
-            sqlite3.Error: If there is an error executing the SQL query."""
+            sqlite3.Error: If a database error occurs during query execution."""
         self.cursor.execute(
             """
         INSERT INTO transactions (date, description, amount)
