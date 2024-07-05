@@ -59,6 +59,7 @@ jobs:
           cp -r ./docs/html/* ./docs/
           rm -r ./docs/html
           cp .github/workflows/.nojekyll ./docs/
+          cp .github/workflows/.nojekyll ./
           git add -f ./docs/*
       - name: Commit files
         run: | 
@@ -66,10 +67,6 @@ jobs:
           git config --global user.email "you@example.com"
           git config --global user.name "LLM-Docstring-Agent"
           git commit -am "LLM-documented files pushed"
-          git push
-          git checkout -b gh-pages
-          git rm .nojekyll
-          git commit -am "remove .nojekyll"
           git push
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
