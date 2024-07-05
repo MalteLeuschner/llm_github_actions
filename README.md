@@ -1,4 +1,12 @@
-# llm_github_actions for code documentation
+<h1 align="center">
+  <br>
+  <img src="https://raw.githubusercontent.com/MalteLeuschner/llm_github_actions/waterkant.png" alt="Markdownify" width="200" style="border-radius:8px;"></a>
+  <br>
+   Auto-documentation with LLMs in Python
+  <br>
+</h1>
+
+
 We implement a github actions llm that creates docstrings, typing, linting, and sphinx autodocumenation!
 
 This was produced during coding.waterkant hackathon :) 
