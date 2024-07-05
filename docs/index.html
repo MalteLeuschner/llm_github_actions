@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to llm_github_actions’s documentation! &mdash; llm_github_actions 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            llm_github_actions
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to llm_github_actions’s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a><ul>
+<li><a class="reference internal" href="#verzeichnisstruktur">Verzeichnisstruktur</a></li>
+<li><a class="reference internal" href="#ocr-py">ocr.py</a></li>
+<li><a class="reference internal" href="#database-py">database.py</a></li>
+<li><a class="reference internal" href="#dataviz-py">dataviz.py</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#nutzung">Nutzung</a></li>
+<li><a class="reference internal" href="#beitragende">Beitragende</a></li>
+<li><a class="reference internal" href="#lizenz">Lizenz</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">llm_github_actions</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Welcome to llm_github_actions’s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-llm-github-actions-s-documentation">
+<h1>Welcome to llm_github_actions’s documentation!<a class="headerlink" href="#welcome-to-llm-github-actions-s-documentation" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+<p>Dieses Skript ist ein Python-Programm, das die pytesseract-Bibliothek verwendet, um Optical Character Recognition (OCR) auf einem Bild durchzuführen. Das Programm definiert eine Klasse <code class="docutils literal notranslate"><span class="pre">OCRHandler</span></code> und eine Funktion <code class="docutils literal notranslate"><span class="pre">main()</span></code>.</p>
+<p>Die Klasse <code class="docutils literal notranslate"><span class="pre">OCRHandler</span></code> wird verwendet, um OCR auf Bildern durchzuführen. Sie initialisiert eine Instanz der Klasse mit dem Pfad zum Tesseract-Befehlszeilentool. Der Tesseract-OCR-Engine wird verwendet, um Text aus Bildern zu extrahieren. Die Klasse verfügt über eine Methode, <code class="docutils literal notranslate"><span class="pre">perform_ocr()</span></code>, die eine Bildpfad als Eingabe verwendet und den extrahierten Text als Zeichenfolge zurückgibt.</p>
+<p>Die Funktion <code class="docutils literal notranslate"><span class="pre">main()</span></code> ist der Einstiegspunkt des Programms. Sie erstellt eine Instanz der <code class="docutils literal notranslate"><span class="pre">OCRHandler</span></code>-Klasse mit dem Pfad zum Tesseract-Befehlszeilentool. Anschließend wird OCR an einer Bilddatei namens “balance_sheet.png” mithilfe der <code class="docutils literal notranslate"><span class="pre">perform_ocr()</span></code>-Methode der <code class="docutils literal notranslate"><span class="pre">OCRHandler</span></code>-Instanz durchgeführt. Schließlich wird der extrahierte Text ausgegeben.</p>
+<p>Das Programm verwendet die <code class="docutils literal notranslate"><span class="pre">Image</span></code>-Klasse aus der PIL-Bibliothek, um die Bilddatei zu öffnen. Die Funktion <code class="docutils literal notranslate"><span class="pre">pytesseract.image_to_string()</span></code> wird verwendet, um Text aus dem Bild zu extrahieren.</p>
+<p>Zusammenfassend bietet die <code class="docutils literal notranslate"><span class="pre">OCRHandler</span></code>-Klasse eine bequeme Möglichkeit, OCR an Bildern mithilfe des Tesseract-OCR-Engines durchzuführen. Die Funktion <code class="docutils literal notranslate"><span class="pre">main()</span></code> zeigt, wie die <code class="docutils literal notranslate"><span class="pre">OCRHandler</span></code>-Klasse verwendet wird, um Text aus einer Bilddatei zu extrahieren.</p>
+<section id="verzeichnisstruktur">
+<h2>Verzeichnisstruktur<a class="headerlink" href="#verzeichnisstruktur" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ocr.py</span></code>: Enthält die Definition der <code class="docutils literal notranslate"><span class="pre">OCRHandler</span></code>-Klasse und der <code class="docutils literal notranslate"><span class="pre">main()</span></code>-Funktion.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">database.py</span></code>: Enthält die Definition der <code class="docutils literal notranslate"><span class="pre">DatabaseHandler</span></code>-Klasse.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dataviz.py</span></code>: Enthält die Definition der <code class="docutils literal notranslate"><span class="pre">DataVisualizer</span></code>-Klasse und der <code class="docutils literal notranslate"><span class="pre">main()</span></code>-Funktion.</p></li>
+</ul>
+</section>
+<section id="ocr-py">
+<h2>ocr.py<a class="headerlink" href="#ocr-py" title="Link to this heading"></a></h2>
+</section>
+<section id="database-py">
+<h2>database.py<a class="headerlink" href="#database-py" title="Link to this heading"></a></h2>
+</section>
+<section id="dataviz-py">
+<h2>dataviz.py<a class="headerlink" href="#dataviz-py" title="Link to this heading"></a></h2>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<p>Um das Skript auszuführen, sind die folgenden Python-Bibliotheken erforderlich:</p>
+<ul class="simple">
+<li><p>pytesseract</p></li>
+<li><p>PIL</p></li>
+<li><p>pandas</p></li>
+<li><p>matplotlib</p></li>
+<li><p>streamlit</p></li>
+</ul>
+<p>Installieren Sie diese Bibliotheken mithilfe von pip:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pytesseract<span class="w"> </span>pillow<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>streamlit
+</pre></div>
+</div>
+<p>Stellen Sie sicher, dass Tesseract auf Ihrem System installiert ist. Weitere Informationen zur Installation von Tesseract finden Sie unter <a class="reference external" href="https://github.com/tesseract-ocr/tesseract/wiki">https://github.com/tesseract-ocr/tesseract/wiki</a>.</p>
+</section>
+<section id="nutzung">
+<h2>Nutzung<a class="headerlink" href="#nutzung" title="Link to this heading"></a></h2>
+<p>Führen Sie die <code class="docutils literal notranslate"><span class="pre">main()</span></code>-Funktion in den Modulen <code class="docutils literal notranslate"><span class="pre">ocr.py</span></code>, <code class="docutils literal notranslate"><span class="pre">database.py</span></code> und <code class="docutils literal notranslate"><span class="pre">dataviz.py</span></code> aus, um die Funktionalität des Skripts zu demonstrieren.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>ocr.py
+python<span class="w"> </span>database.py
+python<span class="w"> </span>dataviz.py
+</pre></div>
+</div>
+</section>
+<section id="beitragende">
+<h2>Beitragende<a class="headerlink" href="#beitragende" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Ihr Name</p></li>
+</ul>
+</section>
+<section id="lizenz">
+<h2>Lizenz<a class="headerlink" href="#lizenz" title="Link to this heading"></a></h2>
+<p>Dieses Projekt steht unter der MIT-Lizenz. Weitere Informationen finden Sie in der Datei <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, LLM-Bot.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
