@@ -69,9 +69,3 @@ jobs:
           git config --global user.name "LLM-Docstring-Agent"
           git commit -am "LLM-documented files pushed"
           git push
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: docs # The folder the action should deploy.
-          clean: true
-          clean-exclude: .nojekyll
