@@ -51,7 +51,16 @@
 <li><a class="reference internal" href="#file-descriptions">File Descriptions</a></li>
 <li><a class="reference internal" href="#usage">Usage</a></li>
 <li><a class="reference internal" href="#contributors">Contributors</a></li>
-<li><a class="reference internal" href="#license">License</a></li>
+<li><a class="reference internal" href="#license">License</a><ul>
+<li><a class="reference internal" href="#llm-github-actions">LLM GitHub Actions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id1">Project Description</a></li>
+<li><a class="reference internal" href="#id2">Installation Instructions</a></li>
+<li><a class="reference internal" href="#id3">File Descriptions</a></li>
+<li><a class="reference internal" href="#id4">Usage</a></li>
+<li><a class="reference internal" href="#id5">Contributors</a></li>
+<li><a class="reference internal" href="#id6">License</a></li>
 </ul>
 </li>
 </ul>
@@ -144,6 +153,60 @@ pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </s
 <section id="license">
 <h2>License<a class="headerlink" href="#license" title="Link to this heading"></a></h2>
 <p>This project is licensed under the MIT License - see the <cite>LICENSE</cite> file for details.</p>
+<section id="llm-github-actions">
+<h3>LLM GitHub Actions<a class="headerlink" href="#llm-github-actions" title="Link to this heading"></a></h3>
+</section>
+</section>
+<section id="id1">
+<h2>Project Description<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>The LLM GitHub Actions project is a collection of Python scripts that demonstrate the use of Optical Character Recognition (OCR) to extract text from images, a financial database manager using SQLite, and a financial data visualizer using Streamlit, Pandas, and Matplotlib.</p>
+<p>The OCR script defines a single class <cite>OCRHandler</cite> that takes a Tesseract executable path as an argument and performs OCR on an image using the <cite>pytesseract</cite> library. The financial database manager script defines a <cite>DatabaseHandler</cite> class that sets up a connection to a SQLite database and provides methods for creating, modifying, and querying the database. The financial data visualizer script defines a <cite>DataVisualizer</cite> class that converts transaction data into a Pandas DataFrame and displays it in a Streamlit application with line and bar charts.</p>
+</section>
+<section id="id2">
+<h2>Installation Instructions<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>To install the project, first clone the repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/username/llm_github_actions.git
+</pre></div>
+</div>
+<p>Next, navigate to the project directory and install the required dependencies:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>llm_github_actions
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>File Descriptions<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><cite>ocr.py</cite>: A script that uses OCR to extract text from an image.</p></li>
+<li><p><cite>financial_database_manager.py</cite>: A script that manages financial transactions using SQLite.</p></li>
+<li><p><cite>financial_data_visualizer.py</cite>: A script that visualizes financial data using Streamlit, Pandas, and Matplotlib.</p></li>
+</ul>
+</section>
+<section id="id4">
+<h2>Usage<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>To use the OCR script, run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>ocr.py
+</pre></div>
+</div>
+<p>To use the financial database manager script, run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>financial_database_manager.py
+</pre></div>
+</div>
+<p>To use the financial data visualizer script, run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>streamlit<span class="w"> </span>run<span class="w"> </span>financial_data_visualizer.py
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h2>Contributors<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>[Your Name]</p></li>
+</ul>
+</section>
+<section id="id6">
+<h2>License<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p>[License Information]</p>
+<p>Note: The above text is a rough outline of what the rst file could look like. It is not a fully formatted and detailed report, and it is not translated into German.</p>
 </section>
 </section>
 
