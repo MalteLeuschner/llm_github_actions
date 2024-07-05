@@ -39,4 +39,5 @@ if __name__ == '__main__':
                         nargs=1, help='Folder containing source files to comment.')
     args = parser.parse_args()
     folder = args.folder[0]
+    print(folder)
     main(folder)
