@@ -82,6 +82,15 @@
 <li><a class="reference internal" href="#id21">License</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#id22">LLM GitHub Actions</a><ul>
+<li><a class="reference internal" href="#id23">Project Description</a></li>
+<li><a class="reference internal" href="#id24">Installation Instructions</a></li>
+<li><a class="reference internal" href="#id25">File Descriptions</a></li>
+<li><a class="reference internal" href="#id26">Usage</a></li>
+<li><a class="reference internal" href="#id27">Contributors</a></li>
+<li><a class="reference internal" href="#id28">License</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -408,6 +417,58 @@
 <section id="id21">
 <h3>License<a class="headerlink" href="#id21" title="Link to this heading"></a></h3>
 <p>This project is licensed under the MIT License - see the <cite>LICENSE</cite> file for details.</p>
+</section>
+</section>
+<section id="id22">
+<h2>LLM GitHub Actions<a class="headerlink" href="#id22" title="Link to this heading"></a></h2>
+<section id="id23">
+<h3>Project Description<a class="headerlink" href="#id23" title="Link to this heading"></a></h3>
+<p>The LLM GitHub Actions project is a Python script that performs Optical Character Recognition (OCR) on a given image using the Tesseract OCR engine. The script contains a single class, <cite>OCRHandler</cite>, which initializes an instance of the class with the path to the Tesseract command. The <cite>OCRHandler</cite> class has one method, <cite>perform_ocr</cite>, which takes an image path as input, opens the image, performs OCR on it using the Tesseract command, and returns the extracted text as a string.</p>
+<p>The provided script is a simple Python application that uses SQLite to manage financial transactions. The main components of the script are the <cite>DatabaseHandler</cite> class and the <cite>main</cite> function. The <cite>DatabaseHandler</cite> class is responsible for handling database operations, such as creating a connection to a SQLite database, creating a table for transactions if it doesn’t exist, and providing methods to insert transactions and query existing ones.</p>
+<p>The script also consists of a main function and a <cite>DataVisualizer</cite> class. The <cite>DataVisualizer</cite> class is designed to visualize financial data. It takes a dictionary containing ‘Date’ and ‘Amount’ data as input during initialization and provides methods to display the transaction data in a dataframe, generate a line chart, and generate a bar chart using Streamlit, Pandas, and Matplotlib.</p>
+</section>
+<section id="id24">
+<h3>Installation Instructions<a class="headerlink" href="#id24" title="Link to this heading"></a></h3>
+<p>To install the project, first ensure that the following dependencies are installed:</p>
+<ul class="simple">
+<li><p>Tesseract OCR (for OCR functionality)</p></li>
+<li><p>SQLite (for financial transaction management)</p></li>
+<li><p>Streamlit (for user interface)</p></li>
+<li><p>Pandas (for data manipulation)</p></li>
+<li><p>Matplotlib (for data visualization)</p></li>
+</ul>
+<p>You can install these dependencies using pip:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>tesseract-ocr<span class="w"> </span>pysqlite3<span class="w"> </span>streamlit<span class="w"> </span>pandas<span class="w"> </span>matplotlib
+</pre></div>
+</div>
+<p>After installing the dependencies, you can run the script by executing the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>ocr_script.py
+</pre></div>
+</div>
+</section>
+<section id="id25">
+<h3>File Descriptions<a class="headerlink" href="#id25" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><cite>ocr_script.py</cite>: The main script that performs OCR on a given image using the Tesseract OCR engine.</p></li>
+<li><p><cite>finance_script.py</cite>: The script that manages financial transactions using SQLite.</p></li>
+<li><p><cite>data_visualizer.py</cite>: The script that visualizes financial data using Streamlit, Pandas, and Matplotlib.</p></li>
+</ul>
+</section>
+<section id="id26">
+<h3>Usage<a class="headerlink" href="#id26" title="Link to this heading"></a></h3>
+<p>To use the OCR functionality, simply run the <cite>ocr_script.py</cite> script and provide the path to the image as a command-line argument. The extracted text will be printed to the console.</p>
+<p>To use the financial transaction management functionality, run the <cite>finance_script.py</cite> script. It will create a SQLite database, insert a sample transaction, query all transactions, and print them.</p>
+<p>To use the data visualization functionality, run the <cite>data_visualizer.py</cite> script. It will initialize the <cite>DataVisualizer</cite> class with a sample data dictionary, set the page title using Streamlit, and display the transaction data and charts on the page.</p>
+</section>
+<section id="id27">
+<h3>Contributors<a class="headerlink" href="#id27" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>[Your Name]</p></li>
+</ul>
+</section>
+<section id="id28">
+<h3>License<a class="headerlink" href="#id28" title="Link to this heading"></a></h3>
+<p>This project is licensed under the MIT License.</p>
 </section>
 </section>
 </section>

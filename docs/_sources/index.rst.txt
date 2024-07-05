@@ -375,3 +375,65 @@ License
 -------
 
 This project is licensed under the MIT License - see the `LICENSE` file for details.
+
+=====================
+LLM GitHub Actions
+=====================
+
+Project Description
+-------------------
+
+The LLM GitHub Actions project is a Python script that performs Optical Character Recognition (OCR) on a given image using the Tesseract OCR engine. The script contains a single class, `OCRHandler`, which initializes an instance of the class with the path to the Tesseract command. The `OCRHandler` class has one method, `perform_ocr`, which takes an image path as input, opens the image, performs OCR on it using the Tesseract command, and returns the extracted text as a string.
+
+The provided script is a simple Python application that uses SQLite to manage financial transactions. The main components of the script are the `DatabaseHandler` class and the `main` function. The `DatabaseHandler` class is responsible for handling database operations, such as creating a connection to a SQLite database, creating a table for transactions if it doesn't exist, and providing methods to insert transactions and query existing ones.
+
+The script also consists of a main function and a `DataVisualizer` class. The `DataVisualizer` class is designed to visualize financial data. It takes a dictionary containing 'Date' and 'Amount' data as input during initialization and provides methods to display the transaction data in a dataframe, generate a line chart, and generate a bar chart using Streamlit, Pandas, and Matplotlib.
+
+Installation Instructions
+--------------------------
+
+To install the project, first ensure that the following dependencies are installed:
+
+- Tesseract OCR (for OCR functionality)
+- SQLite (for financial transaction management)
+- Streamlit (for user interface)
+- Pandas (for data manipulation)
+- Matplotlib (for data visualization)
+
+You can install these dependencies using pip:
+
+.. code-block:: bash
+
+    pip install tesseract-ocr pysqlite3 streamlit pandas matplotlib
+
+After installing the dependencies, you can run the script by executing the following command:
+
+.. code-block:: bash
+
+    python ocr_script.py
+
+File Descriptions
+------------------
+
+- `ocr_script.py`: The main script that performs OCR on a given image using the Tesseract OCR engine.
+- `finance_script.py`: The script that manages financial transactions using SQLite.
+- `data_visualizer.py`: The script that visualizes financial data using Streamlit, Pandas, and Matplotlib.
+
+Usage
+-----
+
+To use the OCR functionality, simply run the `ocr_script.py` script and provide the path to the image as a command-line argument. The extracted text will be printed to the console.
+
+To use the financial transaction management functionality, run the `finance_script.py` script. It will create a SQLite database, insert a sample transaction, query all transactions, and print them.
+
+To use the data visualization functionality, run the `data_visualizer.py` script. It will initialize the `DataVisualizer` class with a sample data dictionary, set the page title using Streamlit, and display the transaction data and charts on the page.
+
+Contributors
+------------
+
+- [Your Name]
+
+License
+-------
+
+This project is licensed under the MIT License.
