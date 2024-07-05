@@ -58,10 +58,8 @@ jobs:
           sphinx-build -M html ./docs/source ./docs
           cp -r ./docs/html/* ./docs/
           rm -r ./docs/html
-          cp .github/workflows/.nojekyll ./docs/
-          cp .github/workflows/.nojekyll ./
+          cp -f .github/workflows/.nojekyll ./docs/
           git add -f ./docs/*
-          git add -f .nojekyll
       - name: Commit files
         run: | 
           echo "Committing updated .py files...!"
