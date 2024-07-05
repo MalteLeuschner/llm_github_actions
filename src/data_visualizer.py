@@ -6,14 +6,6 @@ import matplotlib.pyplot as plt
 
 
 class DataVisualizer:
-    """:
-    DataVisualizer class for visualizing financial data.
-
-    Args:
-        data (Dict[str, List[str]]): A dictionary containing 'Date' and 'Amount' data.
-
-    Raises:
-        ValueError: If the input data is not in the correct format."""
 
     def __init__(self, data: Dict[str, List[str]]) -> None:
         """Initiates a DataVisualizer instance.
