@@ -1,16 +1,13 @@
 <h1 align="center">
   <br>
-  <img src="https://raw.githubusercontent.com/MalteLeuschner/llm_github_actions/waterkant.png" alt="Waterkant Image" width="200" style="border-radius:8px;"></a>
+  <img src="https://github.com/MalteLeuschner/llm_github_actions/waterkant.png?raw=true" alt="Waterkant Image" width="200" style="border-radius:8px;"></a>
   <br>
    Auto-documentation with LLMs in Python
   <br>
 </h1>
 
-
-We implement a github actions llm that creates docstrings, typing, linting, and sphinx autodocumenation!
-
-This was produced during coding.waterkant hackathon :) 
-
+We implement a github actions llm that creates docstrings, typing, linting, and sphinx autodocumenation
+This was done during coding.waterkant hackathon in Kiel
 
 ## Setup-instructions
 
