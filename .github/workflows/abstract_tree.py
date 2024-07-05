@@ -6,7 +6,9 @@ import argparse
 from groq import Groq
 import regex as re
 from dotenv import load_dotenv
-
+from copy import deepcopy
+import inspect
+import typing
 
 class PythonParser(ast.NodeVisitor):
     def __init__(self):
@@ -117,18 +119,28 @@ class PythonParser(ast.NodeVisitor):
         for type_string in typing:
             self.used_types += type_regex.findall(type_string)
         updater = FunctionTypingUpdater()
-        self.tree = updater.visit(self.tree)
-        ast.fix_missing_locations(self.tree)
+        backup_tree = deepcopy(self.tree)
+        backup_tree = updater.visit(backup_tree)
+        ast.fix_missing_locations(backup_tree)
+        try:
+            ast.parse(astor.to_source(backup_tree))
+            self.tree = backup_tree
+        except SyntaxError:
+            pass
 
     def get_updated_script(self):
         # Return the updated script as a string
         additional_import = [ut for ut in set(self.used_types)
                              if ut[0].isupper() and ut != 'None'
-                             and not ut.__contains__('.')]
+                             and not ut.__contains__('.')
+                             and ut in typing.__all__]
+        source_code = astor.to_source(self.tree)
         if additional_import:
-            return f'from typing import {", ".join(additional_import)}\n{astor.to_source(self.tree)}'
+            if source_code.split('\n')[0].startswith('from typing'):
+                source_code = '\n'.join(source_code.split('\n')[1:])
+            return f'from typing import {", ".join(additional_import)}\n{source_code}'
         else:
-            return astor.to_source(self.tree)
+            return source_code
 
 
 class LlmCommenter:
