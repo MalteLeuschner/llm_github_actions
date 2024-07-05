@@ -2,6 +2,7 @@ import pytesseract
 from PIL import Image
 
 
+
 class OCRHandler:
     """Initializes an OCRHandler instance.
 

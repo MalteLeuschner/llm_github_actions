@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
+
 class DataVisualizer:
     """:
     DataVisualizer class for visualizing financial data.

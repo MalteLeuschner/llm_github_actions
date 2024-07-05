@@ -2,6 +2,7 @@ from typing import Tuple, List
 import sqlite3
 
 
+
 class DatabaseHandler:
     """:
     DatabaseHandler is a class that handles database operations.
