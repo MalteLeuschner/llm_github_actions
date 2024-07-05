@@ -58,11 +58,14 @@ jobs:
           sphinx-build -M html ./docs/source ./docs
           cp -r ./docs/html/* ./docs/
           rm -r ./docs/html
-          cp -f .github/workflows/.nojekyll ./docs/ ; touch ./docs/.nojekyll ; git add -f ./docs/*
+          git add -f ./docs/*
       - name: Commit files
         run: | 
           echo "Committing updated .py files...!"
           git config --global user.email "you@example.com"
           git config --global user.name "LLM-Docstring-Agent"
           git commit -am "LLM-documented files pushed"
+          touch ./docs/.nojekyll
+          git add -f ./docs/.nojekyll
+          git commit -m "Add .nojekyll"
           git push
