@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="https://raw.githubusercontent.com/MalteLeuschner/llm_github_actions/waterkant.png" alt="Markdownify" width="200" style="border-radius:8px;"></a>
+  <img src="https://raw.githubusercontent.com/MalteLeuschner/llm_github_actions/waterkant.png" alt="Waterkant Image" width="200" style="border-radius:8px;"></a>
   <br>
    Auto-documentation with LLMs in Python
   <br>
