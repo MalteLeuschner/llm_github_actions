@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="https://github.com/MalteLeuschner/llm_github_actions/waterkant.png?raw=true" alt="Waterkant Image" width="200" style="border-radius:8px;"></a>
+  ![Waterkant Image](waterkant.png)
   <br>
    Auto-documentation with LLMs in Python
   <br>
