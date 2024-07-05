@@ -38,5 +38,5 @@ if __name__ == '__main__':
     parser.add_argument('folder', metavar='F', type=str,
                         nargs=1, help='Folder containing source files to comment.')
     args = parser.parse_args()
-    folder = args.files[0]
+    folder = args.folder[0]
     main(folder)
