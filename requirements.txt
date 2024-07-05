@@ -10,3 +10,5 @@ argparse
 autopep8
 sphinx
 sphinx_rtd_theme
+streamlit
+pytesseract
