@@ -3,15 +3,15 @@ import os
 import sys
 
 
-def get_changed_files(repo, commit_sha):
+def get_changed_files(repo, commit_sha, folder = 'src'):
     commit = repo.get_commit(commit_sha)
     files = commit.files
     changed_files = [file.filename for file in files if file.filename.
-        endswith('.py') and file.filename.startswith('src')]
+        endswith('.py') and file.filename.startswith(folder)]
     return changed_files
 
 
-def main():
+def main(folder):
     token = os.getenv('GITHUB_TOKEN')
     if not token:
         print('GITHUB_TOKEN environment variable is not set.')
@@ -25,11 +25,18 @@ def main():
             )
         sys.exit(1)
     repo = g.get_repo(repo_name)
-    changed_files = get_changed_files(repo, commit_sha)
+    changed_files = get_changed_files(repo, commit_sha, folder)
     for file in changed_files:
         print(file)
     print(f"::set-output name=changed_files::{' '.join(changed_files)}")
 
 
 if __name__ == '__main__':
-    main()
+    parser = argparse.ArgumentParser(
+        description="Look for changes in python files."
+    )
+    parser.add_argument('folder', metavar='F', type=str,
+                        nargs='1', help='Folder containing source files to comment.')
+    args = parser.parse_args()
+    folder = args.files[0]
+    main(folder)
