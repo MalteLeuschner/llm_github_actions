@@ -6,8 +6,9 @@ import argparse
 def get_changed_files(repo, commit_sha, folder = 'src'):
     commit = repo.get_commit(commit_sha)
     files = commit.files
-    changed_files = [file.filename for file in files if file.filename.
-        endswith('.py') and file.filename.startswith(folder)]
+    changed_files = [file.filename for file in files
+                     if file.filename.endswith('.py')
+                     and file.filename.startswith(folder)]
     return changed_files
 
 

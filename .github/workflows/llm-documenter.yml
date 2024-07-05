@@ -5,7 +5,7 @@ permissions:
   contents: write
 
 env:
-  SOURCE_PATH: './src'
+  SOURCE_PATH: 'src'
 
 jobs:
   document_changed_python_files:
