@@ -694,3 +694,90 @@ License
 -------
 
 This project is licensed under the MIT License - see the `LICENSE` file for details.
+
+=====================
+LLM GitHub Actions
+====================
+
+Project Description
+-------------------
+
+The LLM GitHub Actions project is a Python script that performs Optical Character Recognition (OCR) on an image using the Tesseract OCR engine. The script contains a single class, `OCRHandler`, which initializes an instance of the class with the path to the Tesseract command. The `OCRHandler` class has one method, `perform_ocr`, which takes an image path as input, opens the image, performs OCR on it using the Tesseract command, and returns the extracted text as a string.
+
+The project also includes a simple Python application that uses SQLite to manage financial transactions. The main components of this script are the `DatabaseHandler` class and the `main` function. The `DatabaseHandler` class is responsible for handling database operations, such as creating a connection to a SQLite database, creating a table for transactions if it doesn't exist, and providing methods to insert transactions and query existing ones.
+
+The project further includes a script for visualizing financial data using Streamlit, Pandas, and Matplotlib. The `DataVisualizer` class takes a dictionary containing 'Date' and 'Amount' data as input during initialization and provides methods to display the data in a dataframe, generate a line chart, and generate a bar chart.
+
+Installation Instructions
+-------------------------
+
+To install the project, first ensure that the following dependencies are installed:
+
+- pytesseract
+- Pillow
+- SQLite3
+- Streamlit
+- Pandas
+- Matplotlib
+
+You can install these dependencies using pip:
+
+.. code-block:: bash
+
+    pip install pytesseract Pillow SQLite3 Streamlit Pandas Matplotlib
+
+After installing the dependencies, you can run the OCR script by executing the following command:
+
+.. code-block:: bash
+
+    python ocr_script.py
+
+To run the financial transaction management script, execute the following command:
+
+.. code-block:: bash
+
+    python financial_transactions.py
+
+To run the financial data visualization script, execute the following command:
+
+.. code-block:: bash
+
+    streamlit run data_visualization.py
+
+File Descriptions
+-----------------
+
+- `ocr_script.py`: A Python script that performs OCR on an image using the Tesseract OCR engine.
+- `financial_transactions.py`: A Python script that manages financial transactions using SQLite.
+- `data_visualization.py`: A Python script that visualizes financial data using Streamlit, Pandas, and Matplotlib.
+
+Usage
+-----
+
+To use the OCR script, simply execute the `ocr_script.py` file. The script will perform OCR on an image named "balance\_sheet.png" and print the extracted text.
+
+To use the financial transaction management script, execute the `financial_transactions.py` file. The script will create a database, insert a sample transaction, query all transactions, and print them.
+
+To use the financial data visualization script, execute the `data_visualization.py` file. The script will initialize the `DataVisualizer` class with a sample data dictionary, set the page title using Streamlit, and display the data and charts on the page.
+
+Contributors
+------------
+
+The main contributors to the project are:
+
+- [Your Name]
+
+License
+-------
+
+The project is licensed under the MIT License.
+
+.. include:: ../LICENSE
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   ocr_script
+   financial_transactions
+   data_visualization
