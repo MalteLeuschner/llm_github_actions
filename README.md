@@ -1,9 +1,6 @@
+![Waterkant Image](waterkant.png)
 <h1 align="center">
-  <br>
-  ![Waterkant Image](waterkant.png)
-  <br>
    Auto-documentation with LLMs in Python
-  <br>
 </h1>
 
 We implement a github actions llm that creates docstrings, typing, linting, and sphinx autodocumenation
