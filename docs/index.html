@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to llm_github_actions’s documentation! &mdash; llm_github_actions 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            llm_github_actions
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to llm_github_actions’s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li><a class="reference internal" href="#the-ocrhandler-class">The OCRHandler class</a></li>
+<li><a class="reference internal" href="#the-databasehandler-class">The DatabaseHandler class</a></li>
+<li><a class="reference internal" href="#the-datavisualizer-class">The DataVisualizer class</a><ul>
+<li><a class="reference internal" href="#installation-instructions">Installation instructions:</a></li>
+<li><a class="reference internal" href="#required-packages">Required packages:</a></li>
+<li><a class="reference internal" href="#verzeichnisstruktur">Verzeichnisstruktur:</a></li>
+<li><a class="reference internal" href="#usage">Usage:</a></li>
+<li><a class="reference internal" href="#contributors">Contributors:</a></li>
+<li><a class="reference internal" href="#license">License:</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">llm_github_actions</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Welcome to llm_github_actions’s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com//MalteLeuschner/llm_github_actions/blob/main/source/index.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-llm-github-actions-s-documentation">
+<h1>Welcome to llm_github_actions’s documentation!<a class="headerlink" href="#welcome-to-llm-github-actions-s-documentation" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+<section id="the-ocrhandler-class">
+<h1>The OCRHandler class<a class="headerlink" href="#the-ocrhandler-class" title="Link to this heading"></a></h1>
+<p>The OCRHandler class is initialized with a tesseract command path. This class is responsible for handling OCR operations using the pytesseract library.</p>
+<p>Args:
+tesseract_cmd (str): The path to the tesseract command.</p>
+<p>Methods:</p>
+<ul class="simple">
+<li><p><strong>__init__(self, tesseract_cmd: str) -&gt; None</strong>:</p></li>
+</ul>
+<p>Initializes the OCRHandler instance and sets the tesseract command for the pytesseract library.</p>
+<ul class="simple">
+<li><p><strong>perform_ocr(self, image_path: str) -&gt; str</strong>:</p></li>
+</ul>
+<p>Performs Optical Character Recognition (OCR) on an image. This function uses the pytesseract library to extract text from an image.</p>
+<p>Args:
+image_path (str): The path to the image file.</p>
+<p>Returns:
+str: The extracted text from the image.</p>
+<p>Raises:
+FileNotFoundError: If the image file does not exist.</p>
+<p>Main Function:
+The main function initializes an OCRHandler instance with the path to the tesseract command and performs OCR on an image file named “balance_sheet.png”. The extracted text is then printed.</p>
+<p>Args:
+None</p>
+<p>Returns:
+None</p>
+<p>Raises:
+None</p>
+</section>
+<section id="the-databasehandler-class">
+<h1>The DatabaseHandler class<a class="headerlink" href="#the-databasehandler-class" title="Link to this heading"></a></h1>
+<p>The DatabaseHandler class is a database handler class that manages the interaction with an SQLite database. It creates a table for transactions, inserts transactions, queries transactions, and closes the database connection.</p>
+<p>The class has five methods:</p>
+<p>1. <strong>__init__(self, db_name: str) -&gt; None</strong>:
+Initializes a DatabaseHandler object by creating a connection to an SQLite database and initializing a cursor object.</p>
+<p>2. <strong>create_table(self) -&gt; None</strong>:
+Creates a table in the database if it does not exist. The table named ‘transactions’ has columns ‘id’, ‘date’, ‘description’, and ‘amount’.</p>
+<p>3. <strong>insert_transaction(self, date: str, description: str, amount: float) -&gt; None</strong>:
+Inserts a transaction into the database by executing a SQL query.</p>
+<p>4. <strong>query_transactions(self) -&gt; List[Tuple]</strong>:
+Retrieves all transactions from the database by executing a SQL query and returns the result as a list of tuples.</p>
+<p>5. <strong>close(self) -&gt; None</strong>:
+Closes the database connection.</p>
+<p>Main Function:
+The main function runs the entire program by creating a DatabaseHandler object, inserting a transaction, querying all transactions, and printing them. The database file is named “financial_data.db”. The transaction inserted has a date of “2024-07-05”, a description of “Deposit”, and an amount of 1000.0. The program then prints all the transactions in the database and closes the database connection.</p>
+</section>
+<section id="the-datavisualizer-class">
+<h1>The DataVisualizer class<a class="headerlink" href="#the-datavisualizer-class" title="Link to this heading"></a></h1>
+<p>The DataVisualizer class is designed for visualizing transaction data. It creates a pandas DataFrame from the provided data for further visualization.</p>
+<ul class="simple">
+<li><p><strong>__init__(self, data: Dict[str, List[str]]) -&gt; None</strong>:</p></li>
+</ul>
+<p>This constructor initializes a DataVisualizer instance and creates a pandas DataFrame from the provided data.</p>
+<ul class="simple">
+<li><p><strong>display_data(self) -&gt; None</strong>:</p></li>
+</ul>
+<p>This method displays the transaction data in a dataframe using Streamlit’s dataframe function.</p>
+<ul class="simple">
+<li><p><strong>plot_line_chart(self) -&gt; None</strong>:</p></li>
+</ul>
+<p>This method generates a line chart using matplotlib, where the x-axis represents the date and the y-axis represents the amount. The chart is then displayed using Streamlit’s pyplot function.</p>
+<ul class="simple">
+<li><p><strong>plot_bar_chart(self) -&gt; None</strong>:</p></li>
+</ul>
+<p>This method generates a bar chart using the provided data, with dates on the x-axis and amounts on the y-axis. The chart is then displayed using Streamlit’s pyplot function.</p>
+<p>main() Function:
+The main function initializes the DataVisualizer class with sample data, sets the Streamlit title, and displays the dataframe, line chart, and bar chart.</p>
+<p>Program Flow:</p>
+<ol class="arabic simple">
+<li><p>The script initializes the DataVisualizer class with a dictionary containing transaction data.</p></li>
+<li><p>The Streamlit title is set to “Financial Data Visualization”.</p></li>
+<li><p>The display_data method is called to display the transaction data in a dataframe.</p></li>
+<li><p>The plot_line_chart method is called to generate and display a line chart of transaction amounts over time.</p></li>
+<li><p>The plot_bar_chart method is called to generate and display a bar chart of transaction amounts over time.</p></li>
+</ol>
+<section id="installation-instructions">
+<h2>Installation instructions:<a class="headerlink" href="#installation-instructions" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Clone the repository:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/username/repository.git</span>
+<span class="pre">`</span></code></p>
+</li>
+<li><p>Navigate to the project directory:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">cd</span> <span class="pre">repository</span>
+<span class="pre">`</span></code></p>
+</li>
+<li><p>Create a virtual environment (optional but recommended):</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">venv</span>
+<span class="pre">source</span> <span class="pre">venv/bin/activate</span>
+<span class="pre">`</span></code></p>
+</li>
+<li><p>Install the required packages:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span>
+<span class="pre">`</span></code></p>
+</li>
+<li><p>Run the program:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">python</span> <span class="pre">main.py</span>
+<span class="pre">`</span></code></p>
+</li>
+</ol>
+</section>
+<section id="required-packages">
+<h2>Required packages:<a class="headerlink" href="#required-packages" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>pytesseract</p></li>
+<li><p>opencv-python-headless</p></li>
+<li><p>pandas</p></li>
+<li><p>matplotlib</p></li>
+<li><p>streamlit</p></li>
+<li><p>sqlite3</p></li>
+</ul>
+</section>
+<section id="verzeichnisstruktur">
+<h2>Verzeichnisstruktur:<a class="headerlink" href="#verzeichnisstruktur" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>repository/</p>
+<ul>
+<li><p>data/</p></li>
+<li><p>docs/</p></li>
+<li><p>financial_data.db</p></li>
+<li><p>financial_data.png</p></li>
+<li><p>main.py</p></li>
+<li><p>requirements.txt</p></li>
+<li><p>OCRHandler.py</p></li>
+<li><p>DatabaseHandler.py</p></li>
+<li><p>DataVisualizer.py</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="usage">
+<h2>Usage:<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Run the program:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">python</span> <span class="pre">main.py</span>
+<span class="pre">`</span></code></p>
+</li>
+<li><p>Follow the instructions in the Streamlit interface.</p></li>
+</ol>
+</section>
+<section id="contributors">
+<h2>Contributors:<a class="headerlink" href="#contributors" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>[Your Name](<a class="reference external" href="mailto:you&#37;&#52;&#48;example&#46;com">mailto:you<span>&#64;</span>example<span>&#46;</span>com</a>)</p></li>
+</ul>
+</section>
+<section id="license">
+<h2>License:<a class="headerlink" href="#license" title="Link to this heading"></a></h2>
+<p>This project is licensed under the MIT License - see the LICENSE.md file for details.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, LLM-Bot.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
