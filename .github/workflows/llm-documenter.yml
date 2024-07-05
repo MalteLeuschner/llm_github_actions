@@ -53,7 +53,7 @@ jobs:
             echo "sys.path.insert(0, os.path.abspath('../..'))" >> ./docs/source/conf.py
             echo "extensions += ['sphinx.ext.napoleon', 'sphinx_rtd_theme', 'sphinx.ext.githubpages']" >> ./docs/source/conf.py
             echo "html_theme = 'sphinx_rtd_theme'" >> ./docs/source/conf.py
-            echo "html_context = {'display_github': True, 'github_user': 'LLM-Bot', 'github_repo': '${{ github.repository }}', 'github_version': 'main', 'conf_py_path': '/source/'}" >> ./docs/source/conf.py
+            echo "html_context = {'display_github': True, 'github_repo': '${{ github.repository }}', 'github_version': 'main', 'conf_py_path': '/source/'}" >> ./docs/source/conf.py
           fi
       - name: Render sphinx
         run: |
