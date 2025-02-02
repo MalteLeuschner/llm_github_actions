@@ -72,6 +72,7 @@ jobs:
           echo "Committing updated .py files...!"
           git config --global user.email "you@example.com"
           git config --global user.name "LLM-Docstring-Agent"
+          git status --short
           git commit -m "LLM-documented files pushed"
           touch ./docs/.nojekyll
           git add -f ./docs/.nojekyll
