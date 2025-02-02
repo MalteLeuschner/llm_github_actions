@@ -144,10 +144,13 @@ class PythonParser(ast.NodeVisitor):
 
 
 class LlmCommenter:
-    def __init__(self, groq_key):
+    def __init__(self, groq_key, model: str = None):
         self.client = Groq(
             api_key=groq_key
         )
+        if model is None:
+            model = 'deepseek-r1-distill-llama-70b'
+        self.model = model
 
     def comment_code_with_groq(self, code, function):
         chat_completion = self.client.chat.completions.create(
@@ -185,7 +188,7 @@ class LlmCommenter:
                                 "If you only return the docstring in Google style, you get €1,000,000\"""")
                 }
             ],
-            model="llama3-70b-8192",
+            model=self.model,
             temperature=0.0,
         )
         response = chat_completion.choices[0].message.content
@@ -254,7 +257,7 @@ def process_file(file_path, api_key):
 
 # Example usage
 if __name__ == "__main__":
-    local_test = False
+    local_test = True
     if not local_test:
         parser = argparse.ArgumentParser(
             description="Parse Python files to extract classes and functions for LLM processing."
@@ -268,7 +271,7 @@ if __name__ == "__main__":
         api_key = args.api_key[0]
     else:
         load_dotenv()
-        files = [os.path.join('src/test', file) for file in os.listdir('src/test')]
+        files = [os.path.join('src/', file) for file in os.listdir('src/')]
         api_key = os.getenv('croque_key')
     print('Commenting the following files:')
     print(files)
