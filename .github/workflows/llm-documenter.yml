@@ -66,17 +66,13 @@ jobs:
           sphinx-build -M html ./docs/source ./docs
           cp -r ./docs/html/* ./docs/
           rm -r ./docs/html
-          git add -f ./docs/*
+          git add -f ./docs/.
       - name: Commit files
         run: | 
           echo "Committing updated .py files...!"
           git config --global user.email "you@example.com"
           git config --global user.name "LLM-Docstring-Agent"
-          git status --short
           git commit -m "LLM-documented files pushed"
-          rm -f docs/.nojekyll
-          git add ./docs/.nojekyll
-          git push origin commented_branch
           touch ./docs/.nojekyll
           git add -f ./docs/.nojekyll
           git commit -m "Add .nojekyll"
