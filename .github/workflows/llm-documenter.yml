@@ -57,7 +57,7 @@ jobs:
       - name: Init Sphinx documentation
         run: |
           git checkout -b gh_pages
-          rm -R docs
+          rm -Rf docs
           if ! test -f "docs/Makefile"; then
             mkdir -p docs
             sphinx-quickstart --sep --makefile --ext-autodoc --project="${{ github.event.repository.name }}" --author="LLM-Bot" --release="0.0.1" --language="en" docs

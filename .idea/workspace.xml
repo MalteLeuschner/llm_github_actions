@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="00a7914e-4d59-43aa-ae2a-d16a28961143" name="Changes" comment="fixed link to file to edit." />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="update" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2iphgsBXaa3fDAohcl6DVykFxmM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/brede/dfncloud/KI_lab_share/coding_waterkant2024/llm_github_actions&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.github/workflows" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.18034.82" />
+        <option value="bundled-python-sdk-975db3bf15a3-2767605e8bc2-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.18034.82" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="00a7914e-4d59-43aa-ae2a-d16a28961143" name="Changes" comment="" />
+      <created>1720193540465</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1720193540465</updated>
+      <workItem from="1720193542699" duration="3245000" />
+      <workItem from="1720196908585" duration="1333000" />
+    </task>
+    <task id="LOCAL-00001" summary="tried to add support for source-folders that are not called &quot;src&quot;.">
+      <option name="closed" value="true" />
+      <created>1720194829164</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1720194829164</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added explanation to README.md">
+      <option name="closed" value="true" />
+      <created>1720194847773</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1720194847773</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fixedd missing import">
+      <option name="closed" value="true" />
+      <created>1720194904787</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1720194904787</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fixe nargs-mistake">
+      <option name="closed" value="true" />
+      <created>1720194975856</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1720194975856</updated>
+    </task>
+    <task id="LOCAL-00005" summary="refactored argument">
+      <option name="closed" value="true" />
+      <created>1720195073163</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1720195073163</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added github-links (maybe).">
+      <option name="closed" value="true" />
+      <created>1720197152885</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1720197152885</updated>
+    </task>
+    <task id="LOCAL-00007" summary="removed author to maybe fix link.">
+      <option name="closed" value="true" />
+      <created>1720197379991</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1720197379991</updated>
+    </task>
+    <task id="LOCAL-00008" summary="moved requirements.txt">
+      <option name="closed" value="true" />
+      <created>1720197476053</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1720197476053</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fixed link to file to edit.">
+      <option name="closed" value="true" />
+      <created>1720197593903</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1720197593903</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="tried to add support for source-folders that are not called &quot;src&quot;." />
+    <MESSAGE value="added explanation to README.md" />
+    <MESSAGE value="fixedd missing import" />
+    <MESSAGE value="fixe nargs-mistake" />
+    <MESSAGE value="refactored argument" />
+    <MESSAGE value="added github-links (maybe)." />
+    <MESSAGE value="removed author to maybe fix link." />
+    <MESSAGE value="moved requirements.txt" />
+    <MESSAGE value="fixed link to file to edit." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed link to file to edit." />
+  </component>
+</project>
