@@ -257,7 +257,7 @@ def process_file(file_path, api_key):
 
 # Example usage
 if __name__ == "__main__":
-    local_test = True
+    local_test = False
     if not local_test:
         parser = argparse.ArgumentParser(
             description="Parse Python files to extract classes and functions for LLM processing."
