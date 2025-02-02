@@ -74,6 +74,8 @@ jobs:
           git config --global user.name "LLM-Docstring-Agent"
           git status --short
           git commit -m "LLM-documented files pushed"
+          rm -f docs/.nojekyll
+          git add ./docs/.nojekyll
           git push origin commented_branch
           touch ./docs/.nojekyll
           git add -f ./docs/.nojekyll
