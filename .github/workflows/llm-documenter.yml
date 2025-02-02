@@ -16,7 +16,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        
+
+      - name: New Branch creation
+        run: |
+        git checkout -b commented_branch
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -46,6 +50,7 @@ jobs:
           done
       - name: Init Sphinx documentation
         run: |
+          rm -R docs
           if ! test -f "docs/Makefile"; then
             mkdir -p docs
             sphinx-quickstart --sep --makefile --ext-autodoc --project="${{ github.event.repository.name }}" --author="LLM-Bot" --release="0.0.1" --language="en" docs
@@ -67,7 +72,7 @@ jobs:
           echo "Committing updated .py files...!"
           git config --global user.email "you@example.com"
           git config --global user.name "LLM-Docstring-Agent"
-          git commit -am "LLM-documented files pushed"
+          git commit -m "LLM-documented files pushed"
           touch ./docs/.nojekyll
           git add -f ./docs/.nojekyll
           git commit -m "Add .nojekyll"
