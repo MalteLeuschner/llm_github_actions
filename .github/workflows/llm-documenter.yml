@@ -19,7 +19,7 @@ jobs:
 
       - name: New Branch creation
         run: |
-        git checkout -b commented_branch
+          git checkout -b commented_branch
 
       - name: Set up Python
         uses: actions/setup-python@v4
