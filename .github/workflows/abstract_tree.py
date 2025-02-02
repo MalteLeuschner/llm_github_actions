@@ -149,7 +149,7 @@ class LlmCommenter:
             api_key=groq_key
         )
         if model is None:
-            model = 'deepseek-r1-distill-llama-70b'
+            model = 'llama-3.3-70b-versatile'
         self.model = model
 
     def comment_code_with_groq(self, code, function):
