@@ -28,9 +28,9 @@ Since several attendees asked how to set up the workflow and non-existent docume
    - If they to not already, all your code-folders do also need __init__.py-files, even if the files are empty. Sphinx-autodoc will ignore them if they don't have one.
 
 4. **Push Changes:**
-   - Whenever you push, the action will:
-     - Add docstrings to `.py` files that have changed.
-     - Summarize your project, build a Sphinx documentation, and put it in the `docs` folder.
+   - After every push, you can manually start the action in the github-actions-tab. It will:
+     - Add docstrings to `.py` files that have changed, add typing and lint your files. The changes will be pushed to a new "commented_branch".
+     - Summarize your project, build a Sphinx documentation, and put it in the `docs` folder in a gh_pages-branch.
 
 5. **Publish Documentation (Optional):**
    - If your repo is public, you can make the documentation accessible via [GitHub Pages](https://docs.github.com/en/pages/quickstart).

@@ -149,7 +149,7 @@ class LlmCommenter:
             api_key=groq_key
         )
         if model is None:
-            model = 'llama-3.3-70b-versatile'
+            model = 'llama3-70b-8192'
         self.model = model
 
     def comment_code_with_groq(self, code, function):
