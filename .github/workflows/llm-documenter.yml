@@ -48,8 +48,15 @@ jobs:
             black $OUTPUT
             git add $OUTPUT
           done
+          echo "Committing updated .py files...!"
+          git config --global user.email "you@example.com"
+          git config --global user.name "LLM-Docstring-Agent"
+          git commit -m "LLM-documented files pushed"
+          git push origin commented_branch --force
+
       - name: Init Sphinx documentation
         run: |
+          git checkout -b gh_pages
           rm -R docs
           if ! test -f "docs/Makefile"; then
             mkdir -p docs
@@ -67,13 +74,10 @@ jobs:
           cp -r ./docs/html/* ./docs/
           rm -r ./docs/html
           git add -f ./docs/.
+
       - name: Commit files
         run: | 
-          echo "Committing updated .py files...!"
-          git config --global user.email "you@example.com"
-          git config --global user.name "LLM-Docstring-Agent"
-          git commit -m "LLM-documented files pushed"
           touch ./docs/.nojekyll
           git add -f ./docs/.nojekyll
           git commit -m "Add .nojekyll"
-          git push origin commented_branch --force
+          git push origin gh_pages --force
