@@ -76,4 +76,4 @@ jobs:
           touch ./docs/.nojekyll
           git add -f ./docs/.nojekyll
           git commit -m "Add .nojekyll"
-          git push origin commented_branch
+          git push origin commented_branch --force
