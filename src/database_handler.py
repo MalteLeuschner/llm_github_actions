@@ -1,15 +1,47 @@
-from typing import Tuple, List
+from typing import List, Tuple
 import sqlite3
 
 
 class DatabaseHandler:
+    """
+    DatabaseHandler class for handling SQLite database operations.
 
-    def __init__(self, db_name):
+    This class provides methods for creating a database table, inserting transactions,
+    querying transactions, and closing the database connection.
+
+    Args:
+        db_name (str): The name of the database file.
+
+    """
+
+    def __init__(self, db_name: str) -> None:
+        """Initializes a DatabaseHandler instance.
+
+        Creates a connection to a SQLite database and creates a table for transactions if it doesn't exist.
+
+        Args:
+            db_name (str): The name of the database file.
+
+        Returns:
+            None"""
         self.conn = sqlite3.connect(db_name)
         self.cursor = self.conn.cursor()
         self.create_table()
 
-    def create_table(self):
+    def create_table(self) -> None:
+        """Creates a table in the database if it does not exist.
+
+        This method creates a table named 'transactions' with columns 'id', 'date', 'description', 'amount'
+        if the table does not already exist in the database.
+
+        Args:
+            None
+
+        Returns:
+            None
+
+        Raises:
+            sqlite3.Error: If there is an error while creating the table."""
         self.cursor.execute(
             """
         CREATE TABLE IF NOT EXISTS transactions (
@@ -21,7 +53,21 @@ class DatabaseHandler:
         """
         )
 
-    def insert_transaction(self, date, description, amount):
+    def insert_transaction(self, date: str, description: str, amount: float) -> None:
+        """Inserts a new transaction into the database.
+
+        Inserts a new transaction into the transactions table with the given date, description, and amount.
+
+        Args:
+            date (str): The date of the transaction.
+            description (str): A brief description of the transaction.
+            amount (float): The amount of the transaction.
+
+        Returns:
+            None
+
+        Raises:
+            sqlite3.Error: If there is an error executing the SQL query."""
         self.cursor.execute(
             """
         INSERT INTO transactions (date, description, amount)
@@ -31,15 +77,47 @@ class DatabaseHandler:
         )
         self.conn.commit()
 
-    def query_transactions(self):
+    def query_transactions(self) -> List[Tuple]:
+        """Retrieves all transactions from the database.
+
+        This method executes a SELECT query on the transactions table and fetches all the results.
+
+        Args:
+            None
+
+        Returns:
+            List[Tuple]
+
+        Raises:
+            sqlite3.Error: If a database error occurs during the query execution."""
         self.cursor.execute("SELECT * FROM transactions")
         return self.cursor.fetchall()
 
-    def close(self):
+    def close(self) -> None:
+        """:Closes the database connection.
+
+        Closes the connection to the database, releasing any system resources it was using.
+
+        Args:
+         self (DatabaseHandler): The database handler object.
+
+        Returns:
+         None"""
         self.conn.close()
 
 
-def main():
+def main() -> None:
+    """Main function of the script.
+
+    Runs the entire script, creating a database, inserting a transaction, querying transactions and printing them.
+
+    Args:
+        None
+    Returns:
+        None
+    Raises:
+        sqlite3.Error: If there is an error while connecting to the database or executing a query.
+    """
     db = DatabaseHandler("financial_data.db")
     db.insert_transaction("2024-07-05", "Deposit", 1000.0)
     transactions = db.query_transactions()
